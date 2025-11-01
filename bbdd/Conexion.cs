@@ -16,7 +16,7 @@ namespace MnayaRRHH.bbdd
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json");
+                .AddJsonFile("bbddsettings.json");
 
             config = builder.Build();
         }
