@@ -32,18 +32,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupLogin = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnEntrar = new System.Windows.Forms.Button();
+            this.picturePass = new System.Windows.Forms.PictureBox();
+            this.pictureUser = new System.Windows.Forms.PictureBox();
             this.campoUser = new System.Windows.Forms.TextBox();
             this.campoPass = new System.Windows.Forms.TextBox();
-            this.pictureUser = new System.Windows.Forms.PictureBox();
-            this.picturePass = new System.Windows.Forms.PictureBox();
-            this.btnEntrar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturePass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -71,8 +71,8 @@
             this.groupLogin.Controls.Add(this.btnEntrar);
             this.groupLogin.Controls.Add(this.picturePass);
             this.groupLogin.Controls.Add(this.pictureUser);
-            this.groupLogin.Controls.Add(this.campoPass);
             this.groupLogin.Controls.Add(this.campoUser);
+            this.groupLogin.Controls.Add(this.campoPass);
             this.groupLogin.Controls.Add(this.label2);
             this.groupLogin.Controls.Add(this.label1);
             this.groupLogin.ForeColor = System.Drawing.Color.DeepSkyBlue;
@@ -82,63 +82,6 @@
             this.groupLogin.TabIndex = 2;
             this.groupLogin.TabStop = false;
             this.groupLogin.Text = "ACCEDER";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "USUARIO";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 134);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "CONTRASEÑA";
-            // 
-            // campoUser
-            // 
-            this.campoUser.Location = new System.Drawing.Point(110, 68);
-            this.campoUser.Name = "campoUser";
-            this.campoUser.Size = new System.Drawing.Size(100, 20);
-            this.campoUser.TabIndex = 2;
-            this.campoUser.Enter += new System.EventHandler(this.campoUser_Enter);
-            this.campoUser.Leave += new System.EventHandler(this.campoUser_Leave);
-            // 
-            // campoPass
-            // 
-            this.campoPass.Location = new System.Drawing.Point(110, 131);
-            this.campoPass.Name = "campoPass";
-            this.campoPass.Size = new System.Drawing.Size(100, 20);
-            this.campoPass.TabIndex = 3;
-            this.campoPass.UseSystemPasswordChar = true;
-            this.campoPass.Enter += new System.EventHandler(this.campoPass_Enter);
-            this.campoPass.Leave += new System.EventHandler(this.campoPass_Leave);
-            // 
-            // pictureUser
-            // 
-            this.pictureUser.Image = global::MnayaRRHH.Properties.Resources.user;
-            this.pictureUser.Location = new System.Drawing.Point(225, 57);
-            this.pictureUser.Name = "pictureUser";
-            this.pictureUser.Size = new System.Drawing.Size(41, 45);
-            this.pictureUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureUser.TabIndex = 4;
-            this.pictureUser.TabStop = false;
-            // 
-            // picturePass
-            // 
-            this.picturePass.Image = global::MnayaRRHH.Properties.Resources.pass;
-            this.picturePass.Location = new System.Drawing.Point(225, 120);
-            this.picturePass.Name = "picturePass";
-            this.picturePass.Size = new System.Drawing.Size(41, 45);
-            this.picturePass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picturePass.TabIndex = 5;
-            this.picturePass.TabStop = false;
             // 
             // btnEntrar
             // 
@@ -152,10 +95,71 @@
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
+            // picturePass
+            // 
+            this.picturePass.Image = global::MnayaRRHH.Properties.Resources.pass;
+            this.picturePass.Location = new System.Drawing.Point(225, 120);
+            this.picturePass.Name = "picturePass";
+            this.picturePass.Size = new System.Drawing.Size(41, 45);
+            this.picturePass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picturePass.TabIndex = 5;
+            this.picturePass.TabStop = false;
+            // 
+            // pictureUser
+            // 
+            this.pictureUser.Image = global::MnayaRRHH.Properties.Resources.user;
+            this.pictureUser.Location = new System.Drawing.Point(225, 57);
+            this.pictureUser.Name = "pictureUser";
+            this.pictureUser.Size = new System.Drawing.Size(41, 45);
+            this.pictureUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureUser.TabIndex = 4;
+            this.pictureUser.TabStop = false;
+            // 
+            // campoUser
+            // 
+            this.campoUser.Location = new System.Drawing.Point(110, 68);
+            this.campoUser.Name = "campoUser";
+            this.campoUser.Size = new System.Drawing.Size(100, 20);
+            this.campoUser.TabIndex = 2;
+            this.campoUser.Tag = "USUARIO";
+            this.campoUser.TextChanged += new System.EventHandler(this.campoUser_TextChanged);
+            this.campoUser.Enter += new System.EventHandler(this.campoUser_Enter);
+            this.campoUser.Leave += new System.EventHandler(this.campoUser_Leave);
+            // 
+            // campoPass
+            // 
+            this.campoPass.Location = new System.Drawing.Point(110, 131);
+            this.campoPass.Name = "campoPass";
+            this.campoPass.Size = new System.Drawing.Size(100, 20);
+            this.campoPass.TabIndex = 3;
+            this.campoPass.Tag = "CONTRASEÑA";
+            this.campoPass.UseSystemPasswordChar = true;
+            this.campoPass.Enter += new System.EventHandler(this.campoPass_Enter);
+            this.campoPass.Leave += new System.EventHandler(this.campoPass_Leave);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "CONTRASEÑA";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "USUARIO";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(864, 391);
             this.Controls.Add(this.groupLogin);
             this.Controls.Add(this.pictureBox2);
@@ -172,8 +176,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupLogin.ResumeLayout(false);
             this.groupLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturePass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
