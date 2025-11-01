@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MnayaRRHH.bbdd;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,13 @@ namespace MnayaRRHH.Vistas
         public Principal()
         {
             InitializeComponent();
-            label1.Text = $"Bienvenid@, {Login.nombre} {Login.apellidos}";
-            label2.Text = $"Acceso: {DateTime.Now}";
-            label3.Text = $"Ip de conexión: {Login.ip}";
+            labelNombre.Text = $"Bienvenid@, {Login.nombre} {Login.apellidos}";
+            labelFecha.Text = $"Acceso: {DateTime.Now}";
+            labelip.Text = $"Ip de conexión: {Login.ip}";
+            labelAdmin.Text = Consultas.CuentaCandidatos("candidatoadministracion");
+            labelAlmacen.Text = Consultas.CuentaCandidatos("candidatoalmacen");
+            tablaAdmin.DataSource = Consultas.VerUltimoscandidatosAdmin();
+            tablaAlmacen.DataSource = Consultas.VerUltimoscandidatosAlmacen();
         }
 
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
