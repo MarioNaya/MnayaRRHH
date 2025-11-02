@@ -19,8 +19,9 @@ namespace MnayaRRHH.Vistas
             labelNombre.Text = $"Bienvenid@, {Login.nombre} {Login.apellidos}";
             labelFecha.Text = $"Acceso: {DateTime.Now}";
             labelip.Text = $"Ip de conexión: {Login.ip}";
-            labelAdmin.Text = Consultas.CuentaCandidatos("candidatoadministracion");
-            labelAlmacen.Text = Consultas.CuentaCandidatos("candidatoalmacen");
+            string[] totalRegistros = Consultas.CuentaCandidatos();
+            labelAdmin.Text = totalRegistros[0];
+            labelAlmacen.Text = totalRegistros[1];
             tablaAdmin.DataSource = Consultas.VerUltimoscandidatosAdmin();
             tablaAlmacen.DataSource = Consultas.VerUltimoscandidatosAlmacen();
         }

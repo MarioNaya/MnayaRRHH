@@ -116,6 +116,9 @@
   <ItemGroup>
     <Compile Include="bbdd\Conexion.cs" />
     <Compile Include="bbdd\Consultas.cs" />
+    <Compile Include="Model\Candidato.cs" />
+    <Compile Include="Model\CandidatoAdministracion.cs" />
+    <Compile Include="Model\CandidatoAlmacen.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Utilidades\DatosConexion.cs" />
     <Compile Include="Utilidades\GestionFormularios.cs" />

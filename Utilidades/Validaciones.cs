@@ -10,7 +10,11 @@ namespace MnayaRRHH.Utilidades
 {
     internal class Validaciones
     {
-
+        /// <summary>
+        /// Recorre GroupBox en búsqueda de algún control que esté vació
+        /// </summary>
+        /// <param name="grp">name del GroupBox a recorrer</param>
+        /// <returns>true si no hay campos vacíos, false si hay algún campo vacío</returns>
         public static bool GroupCampoVacio(GroupBox grp)
         {
             foreach (Control c in grp.Controls)

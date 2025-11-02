@@ -15,6 +15,13 @@ namespace MnayaRRHH.bbdd
     {
         public static readonly string url = Conexion.GetConnectionString();
 
+        /// <summary>
+        /// Función de consulta a bbdd para comprobar coincidencia de usuario y contraseña
+        /// en el login
+        /// </summary>
+        /// <param name="user">string</param>
+        /// <param name="pass">string</param>
+        /// <returns>true si existe</returns>
         public static bool Acceder(string user, string pass)
         {
 
@@ -53,6 +60,12 @@ namespace MnayaRRHH.bbdd
             return false;
         }
 
+        /// <summary>
+        /// Recuperamos en consulta a bbdd, el nombre y apellidos del usuario logado
+        /// a través de objeto.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>Objeto Usuario con nombre y apellidos</returns>
         public static Usuario RescataDatosUserLogado(string user)
         {
             string consulta = "SELECT nombre, apellidos FROM usuarios WHERE usuario=?user";
@@ -92,6 +105,11 @@ namespace MnayaRRHH.bbdd
             return null;
         }
 
+        /// <summary>
+        /// Recuperamos los 3 últimos registros por fecha de alta en la tabla de
+        /// candidatosadministracion
+        /// </summary>
+        /// <returns>Tabla con 3 registros</returns>
         public static DataTable VerUltimoscandidatosAdmin()
         {
             DataTable dt = new DataTable();
@@ -134,6 +152,11 @@ namespace MnayaRRHH.bbdd
             return dt;
         }
 
+        /// <summary>
+        /// Recuperamos los 3 últimos registros por fecha de alta en la tabla de
+        /// candidatosalmacen
+        /// </summary>
+        /// <returns>Tabla con 3 registros</returns>
         public static DataTable VerUltimoscandidatosAlmacen()
         {
             DataTable dt = new DataTable();
@@ -176,10 +199,16 @@ namespace MnayaRRHH.bbdd
             return dt;
         }
 
-        public static string CuentaCandidatos(string tabla)
+        /// <summary>
+        /// Recuperamos en una única consulta el número de registros en las tablas de administración
+        /// y alamacén
+        /// </summary>
+        /// <returns>Array, posición 0: administración, posición 1: almacén</returns>
+        public static string[] CuentaCandidatos()
         {
-            string consulta = $"SELECT COUNT(*) FROM {tabla}";
-
+            string consulta = @"SELECT 
+                        (SELECT COUNT(*) FROM candidatoadministracion) as administracion,
+                        (SELECT COUNT(*) FROM candidatoalmacen) as almacen";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(url))
@@ -187,14 +216,19 @@ namespace MnayaRRHH.bbdd
                     conn.Open();
                     using (MySqlCommand cmd = new MySqlCommand(consulta, conn))
                     {
-                        if (cmd.ExecuteScalar() != null)
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string numero = Convert.ToString(cmd.ExecuteScalar());
-                            return numero;
-                        }
-                        else
-                        {
-                            return "0";
+                            if (reader.Read())
+                            {
+                                string[] resultado = new string[2];
+                                resultado[0] = reader.GetInt32("administracion").ToString();
+                                resultado[1] = reader.GetInt32("almacen").ToString();
+                                return resultado;
+                            }
+                            else
+                            {
+                                return new string[] { "0", "0" };
+                            }
                         }
                     }
                 }
@@ -204,7 +238,6 @@ namespace MnayaRRHH.bbdd
                 MessageBox.Show(ex.Message);
                 return null;
             }
-
         }
     }
 }

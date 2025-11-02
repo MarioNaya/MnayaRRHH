@@ -63,8 +63,14 @@ namespace MnayaRRHH
 
         }
 
+        /// <summary>
+        /// Variable para recuperar datos de usuario en otros contextos de la aplicación
+        /// </summary>
         public static string nombre, apellidos, ip;
 
+        /// <summary>
+        /// Valida campos, lanza consulta contra bbdd para login y navega al resultado de la función
+        /// </summary>
         public void Entrar()
         {
             if (Validaciones.GroupCampoVacio(groupLogin))

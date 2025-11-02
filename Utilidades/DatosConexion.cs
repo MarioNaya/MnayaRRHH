@@ -10,6 +10,10 @@ namespace MnayaRRHH.Utilidades
 {
     internal class DatosConexion
     {
+        /// <summary>
+        /// Función para recuperar ip local del el equipo que ejecuta la aplicación
+        /// </summary>
+        /// <returns>string con la ip o string declarando que no se ha encontrado</returns>
         public static string RescatarIpLocal()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());

@@ -9,6 +9,10 @@ namespace MnayaRRHH.Utilidades
 {
     internal class GestionFormularios
     {
+        /// <summary>
+        /// Vaciado de formularios contenidos en un GroupBox
+        /// </summary>
+        /// <param name="grp">name del GroupBox a recorrer</param>
         public static void ReseteaFormulario(GroupBox grp)
         {
             foreach (Control control in grp.Controls)

@@ -12,6 +12,11 @@ namespace MnayaRRHH.bbdd
     {
         private static IConfigurationRoot config;
 
+        /// <summary>
+        /// Accede al .json de configuración de conexión a base de datos para extraer
+        /// los parámetros de conexión y mapearlos. Así podemos mantener ocultos los parámetros
+        /// en repositorios públicos.
+        /// </summary>
         static Conexion()
         {
             var builder = new ConfigurationBuilder()
@@ -21,6 +26,11 @@ namespace MnayaRRHH.bbdd
             config = builder.Build();
         }
 
+        /// <summary>
+        /// Accede al string con parámetros de conexión a bbdd que hemos mapeado en
+        /// el constructor Conexion()
+        /// </summary>
+        /// <returns>String con parámetros de conexión a la base de datos</returns>
         public static string GetConnectionString()
         {
             return config.GetConnectionString("DefaultConnection");
