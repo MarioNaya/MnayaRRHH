@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.9.0.10\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -123,6 +126,36 @@
     <Compile Include="Utilidades\DatosConexion.cs" />
     <Compile Include="Utilidades\GestionFormularios.cs" />
     <Compile Include="Utilidades\Validaciones.cs" />
+    <Compile Include="Vistas\AltaAdministracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AltaAdministracion.Designer.cs">
+      <DependentUpon>AltaAdministracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AltaAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AltaAlmacen.Designer.cs">
+      <DependentUpon>AltaAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\BuscarCandidato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\BuscarCandidato.Designer.cs">
+      <DependentUpon>BuscarCandidato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\DatosMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\DatosMensaje.Designer.cs">
+      <DependentUpon>DatosMensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Listados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Listados.Designer.cs">
+      <DependentUpon>Listados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +170,21 @@
     <Compile Include="Vistas\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\AltaAdministracion.resx">
+      <DependentUpon>AltaAdministracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\AltaAlmacen.resx">
+      <DependentUpon>AltaAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\BuscarCandidato.resx">
+      <DependentUpon>BuscarCandidato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\DatosMensaje.resx">
+      <DependentUpon>DatosMensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Listados.resx">
+      <DependentUpon>Listados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +233,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

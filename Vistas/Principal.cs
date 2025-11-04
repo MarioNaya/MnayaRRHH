@@ -30,5 +30,29 @@ namespace MnayaRRHH.Vistas
         {
             Application.Exit();
         }
+
+        private void btnAltaAdmin_Click(object sender, EventArgs e)
+        {
+            AltaAdministracion aa = new AltaAdministracion();
+            aa.ShowDialog();
+        }
+
+        private void btnAltaAlmacen_Click(object sender, EventArgs e)
+        {
+            AltaAlmacen al = new AltaAlmacen();
+            al.ShowDialog();
+        }
+
+        private void btnListaCandidatos_Click(object sender, EventArgs e)
+        {
+            Listados li =  new Listados();
+            li.ShowDialog();
+        }
+
+        private void btnBuscaCandidatos_Click(object sender, EventArgs e)
+        {
+            BuscarCandidato buscar = new BuscarCandidato();
+            buscar.ShowDialog();
+        }
     }
 }
