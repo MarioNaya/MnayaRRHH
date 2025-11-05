@@ -1,8 +1,12 @@
-﻿using System;
+﻿using MnayaRRHH.bbdd;
+using MnayaRRHH.Model;
+using MnayaRRHH.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +19,186 @@ namespace MnayaRRHH.Vistas
         public AltaAlmacen()
         {
             InitializeComponent();
+            comboLocalidad.SelectedIndex = 0;
+            comboEstudios.SelectedIndex = 0;
+        }
+
+        private void AltaAlmacen_Load(object sender, EventArgs e)
+        {
+            datePickerNacimiento.MaxDate = DateTime.Now.AddYears(-18);
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            RegistrarCandidato();
+        }
+
+        private void campoNombre_Enter(object sender, EventArgs e)
+        {
+            campoNombre.BackColor = Color.White;
+        }
+
+        private void campoApellidos_Enter(object sender, EventArgs e)
+        {
+            campoApellidos.BackColor = Color.White;
+        }
+
+        private void campoDni_Enter(object sender, EventArgs e)
+        {
+            campoDni.BackColor = Color.White;
+        }
+
+        private void campoDireccion_TextChanged(object sender, EventArgs e)
+        {
+            campoDireccion.BackColor = Color.White;
+        }
+
+        private void campoCp_TextChanged(object sender, EventArgs e)
+        {
+            campoCp.BackColor = Color.White;
+        }
+
+        private void campoTelefono_TextChanged(object sender, EventArgs e)
+        {
+            campoTelefono.BackColor = Color.White;
+        }
+
+        private void campoEmail_TextChanged(object sender, EventArgs e)
+        {
+            campoEmail.BackColor = Color.White;
+        }
+
+        private void campoFoto_Enter(object sender, EventArgs e)
+        {
+            campoFoto.BackColor = Color.White;
+        }
+
+        private void campoObservaciones_TextChanged(object sender, EventArgs e)
+        {
+            campoObservaciones.BackColor = Color.White;
+        }
+
+        private void btnFoto_Click(object sender, EventArgs e)
+        {
+            selector.Filter = ("Archivos de imagen|*.jpg;*.jpeg;*.png");
+            if (selector.ShowDialog() == DialogResult.OK)
+            {
+                campoFoto.Text = selector.FileName;
+            }
+            campoFoto.BackColor = Color.White;
+        }
+
+        private void campoDireccion_Enter(object sender, EventArgs e)
+        {
+            campoDireccion.BackColor = Color.White;
+        }
+
+        private void campoCp_Enter(object sender, EventArgs e)
+        {
+            campoCp.BackColor = Color.White;
+        }
+
+        /// <summary>
+        /// Función que valida los campos del formulario y registra un nuevo candidato en la base de datos
+        /// </summary>
+        public void RegistrarCandidato()
+        {
+            if (!Validaciones.GroupCampoVacio(groupPersonales))
+            {
+                return;
+            }
+
+            if (!Validaciones.GroupCampoVacio(groupComplementarios))
+            {
+                return;
+            }
+
+            if (!Validaciones.DniValido(campoDni.Text))
+            {
+                return;
+            }
+
+            if (!Validaciones.ValidarRegex(Validaciones.regexCP, campoCp.Text, campoCp.Tag.ToString()))
+            {
+                return;
+            }
+
+            if (!Validaciones.ValidarRegex(Validaciones.regexMovil, campoTelefono.Text, campoTelefono.Tag.ToString()))
+            {
+                return;
+            }
+
+            if (!Validaciones.ValidarRegex(Validaciones.regexEmail, campoEmail.Text, campoEmail.Tag.ToString()))
+            {
+                return;
+            }
+
+            if (!Validaciones.ValidarRegex(Validaciones.regexFoto, campoFoto.Text, campoFoto.Tag.ToString()))
+            {
+                return;
+            }
+
+            if (!Validaciones.PesoFotoValido(campoFoto.Text))
+            {
+                return;
+            }
+
+            if (!Consultas.BuscarDniAlmacen(campoDni.Text))
+            {
+                CandidatoAlmacen c = new CandidatoAlmacen(
+                    campoNombre.Text,
+                    campoApellidos.Text,
+                    campoDni.Text,
+                    campoDireccion.Text,
+                    campoEmail.Text,
+                    comboEstudios.SelectedItem.ToString(),
+                    File.ReadAllBytes(campoFoto.Text),
+                    comboLocalidad.SelectedItem.ToString(),
+                    campoObservaciones.Text,
+                    Login.nombre + " " + Login.apellidos,
+                    int.Parse(campoCp.Text),
+                    int.Parse(campoTelefono.Text),
+                    DateTime.Now,
+                    datePickerNacimiento.Value,
+                    Validaciones.RecuperarValoresCheck(groupCarnets)[2].ToString(),
+                    Validaciones.RecuperarValoresCheck(groupCarnets)[1].ToString(),
+                    Validaciones.RecuperarValoresCheck(groupCarnets)[0].ToString());
+
+
+
+                if (Consultas.RegistrarCandidatoAlmacen(c))
+                {
+                    MessageBox.Show("Candidato registrado con éxito.", "Registro candidato", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Validaciones.ResetearFormulario(groupPersonales);
+                    Validaciones.ResetearFormulario(groupComplementarios);
+                    Validaciones.ResetearFormulario(groupCarnets);
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar el candidato.", "Registro candidato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("El DNI ya está registrado en la base de datos.", "Registro candidato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void campoTelefono_Enter(object sender, EventArgs e)
+        {
+            campoTelefono.BackColor = Color.White;
+        }
+
+        private void campoEmail_Enter(object sender, EventArgs e)
+        {
+            campoEmail.BackColor = Color.White;
+        }
+
+        private void campoObservaciones_Enter(object sender, EventArgs e)
+        {
+            campoObservaciones.BackColor = Color.White;
         }
     }
 }

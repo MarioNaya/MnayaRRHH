@@ -7,6 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace MnayaRRHH.bbdd
@@ -237,6 +238,164 @@ namespace MnayaRRHH.bbdd
             {
                 MessageBox.Show(ex.Message);
                 return null;
+            }
+        }
+
+        public static bool BuscarDniAlmacen(string dni)
+        {
+            string consulta = "SELECT dni FROM candidatoalmacen WHERE dni=?dni";
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(url))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(consulta, conn))
+                    {
+                        cmd.Parameters.AddWithValue("?dni", dni);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public static bool BuscarDniAdmin(string dni)
+        {
+            string consulta = "SELECT dni FROM candidatoadministracion WHERE dni=?dni";
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(url))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(consulta, conn))
+                    {
+                        cmd.Parameters.AddWithValue("?dni", dni);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public static bool RegistrarCandidatoAdmin(CandidatoAdministracion candidato)
+        {
+            string consulta = "INSERT INTO candidatoadministracion " +
+                            "(nombre, apellidos, dni, fechaNacimiento, direccion, cp, localidad, telefono, email, "+
+                            "foto, nivelEstudios, nivelInformaticaTexto, nivelInformaticaHojaCalculo, nivelInformaticaInternet, " +
+                            "observaciones, fechaAlta, registrador) " +
+                            "VALUES " +
+                            "(?nombre, ?apellidos, ?dni, ?fechaNacimiento, ?direccion, ?cp, ?localidad, ?telefono, ?email, ?foto, " +
+                            "?nivelEstudios, ?nivelInformaticaTexto, ?nivelInformaticaHojaCalculo, ?nivelInformaticaInternet " +
+                            "?observaciones, ?fechaAlta, ?registrador)";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(url))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(consulta, conn))
+                    {
+                        cmd.Parameters.AddWithValue("?nombre", candidato.Nombre);
+                        cmd.Parameters.AddWithValue("?apellidos", candidato.Apellidos);
+                        cmd.Parameters.AddWithValue("?dni", candidato.Dni);
+                        cmd.Parameters.AddWithValue("?fechaNacimiento", candidato.FechaNaciemiento);
+                        cmd.Parameters.AddWithValue("?direccion", candidato.Direccion);
+                        cmd.Parameters.AddWithValue("?cp", candidato.Cp);
+                        cmd.Parameters.AddWithValue("?localidad", candidato.Localidad);
+                        cmd.Parameters.AddWithValue("?telefono", candidato.Tlfno);
+                        cmd.Parameters.AddWithValue("?email", candidato.Email);
+                        cmd.Parameters.AddWithValue("?foto", candidato.Foto);
+                        cmd.Parameters.AddWithValue("?nivelEstudios", candidato.EstudiosFinalizados);
+                        cmd.Parameters.AddWithValue("?nivelInformaticaTexto", candidato.NivelInformaticaTexto);
+                        cmd.Parameters.AddWithValue("?nivelInformaticaHojaCalculo", candidato.NivelInformaticaCalculo);
+                        cmd.Parameters.AddWithValue("?nivelInformaticaInternet", candidato.NivelInformaticaInternet);
+                        cmd.Parameters.AddWithValue("?observaciones", candidato.Observaciones);
+                        cmd.Parameters.AddWithValue("?fechaAlta", candidato.FechaAlta);
+                        cmd.Parameters.AddWithValue("?registrador", candidato.UsuariosRegistrador);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public static bool RegistrarCandidatoAlmacen(CandidatoAlmacen candidato)
+        {
+            string consulta = "INSERT INTO candidatoalmacen " +
+                            "(nombre, apellidos, dni, fechaNacimiento, direccion, cp, localidad, telefono, email, " +
+                            "foto, nivelEstudios, carnetConducir, carnetCarretilla, carnetCamion, " +
+                            "observaciones, fechaAlta, registrador) " +
+                            "VALUES " +
+                            "(?nombre, ?apellidos, ?dni, ?fechaNacimiento, ?direccion, ?cp, ?localidad, ?telefono, ?email, ?foto, " +
+                            "?nivelEstudios, ?carnetConducir, ?carnetCarretilla, ?carnetCamion, " +
+                            "?observaciones, ?fechaAlta, ?registrador)";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(url))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(consulta, conn))
+                    {
+                        cmd.Parameters.AddWithValue("?nombre", candidato.Nombre);
+                        cmd.Parameters.AddWithValue("?apellidos", candidato.Apellidos);
+                        cmd.Parameters.AddWithValue("?dni", candidato.Dni);
+                        cmd.Parameters.AddWithValue("?fechaNacimiento", candidato.FechaNaciemiento);
+                        cmd.Parameters.AddWithValue("?direccion", candidato.Direccion);
+                        cmd.Parameters.AddWithValue("?cp", candidato.Cp);
+                        cmd.Parameters.AddWithValue("?localidad", candidato.Localidad);
+                        cmd.Parameters.AddWithValue("?telefono", candidato.Tlfno);
+                        cmd.Parameters.AddWithValue("?email", candidato.Email);
+                        cmd.Parameters.AddWithValue("?foto", candidato.Foto);
+                        cmd.Parameters.AddWithValue("?nivelEstudios", candidato.EstudiosFinalizados);
+                        cmd.Parameters.AddWithValue("?carnetConducir", candidato.CarnetConducir);
+                        cmd.Parameters.AddWithValue("?carnetCarretilla", candidato.CarnetCarretilla);
+                        cmd.Parameters.AddWithValue("?carnetCamion", candidato.CarnetCamion);
+                        cmd.Parameters.AddWithValue("?observaciones", candidato.Observaciones);
+                        cmd.Parameters.AddWithValue("?fechaAlta", candidato.FechaAlta);
+                        cmd.Parameters.AddWithValue("?registrador", candidato.UsuariosRegistrador);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
     }

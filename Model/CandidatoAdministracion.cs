@@ -17,7 +17,7 @@ namespace MnayaRRHH.Model
             string direccion, 
             string email, 
             string estudiosFinalizados, 
-            string foto, 
+            byte[] foto, 
             string localidad, 
             string observaciones, 
             string usuariosRegistrador, 

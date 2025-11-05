@@ -8,11 +8,13 @@ namespace MnayaRRHH.Model
 {
     internal class Candidato
     {
-        private string nombre, apellidos, dni, direccion, email, estudiosFinalizados, foto, localidad, observaciones, usuariosRegistrador;
+        private string nombre, apellidos, dni, direccion, email, estudiosFinalizados;
+        private byte[] foto;
+        private string localidad, observaciones, usuariosRegistrador;
         private int cp, tlfno;
         private DateTime fechaAlta, fechaNaciemiento;
 
-        public Candidato(string nombre, string apellidos, string dni, string direccion, string email, string estudiosFinalizados, string foto, string localidad, string observaciones, string usuariosRegistrador, int cp, int tlfno, DateTime fechaAlta, DateTime fechaNaciemiento)
+        public Candidato(string nombre, string apellidos, string dni, string direccion, string email, string estudiosFinalizados, byte[] foto, string localidad, string observaciones, string usuariosRegistrador, int cp, int tlfno, DateTime fechaAlta, DateTime fechaNaciemiento)
         {
             this.Nombre = nombre;
             this.Apellidos = apellidos;
@@ -36,7 +38,7 @@ namespace MnayaRRHH.Model
         public string Direccion { get => direccion; set => direccion = value; }
         public string Email { get => email; set => email = value; }
         public string EstudiosFinalizados { get => estudiosFinalizados; set => estudiosFinalizados = value; }
-        public string Foto { get => foto; set => foto = value; }
+        public byte[] Foto { get => foto; set => foto = value; }
         public string Localidad { get => localidad; set => localidad = value; }
         public string Observaciones { get => observaciones; set => observaciones = value; }
         public string UsuariosRegistrador { get => usuariosRegistrador; set => usuariosRegistrador = value; }

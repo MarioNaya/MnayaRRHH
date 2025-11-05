@@ -32,17 +32,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupPersonales = new System.Windows.Forms.GroupBox();
-            this.campoFoto = new System.Windows.Forms.TextBox();
-            this.comboLocalidad = new System.Windows.Forms.ComboBox();
-            this.campoEmail = new System.Windows.Forms.TextBox();
-            this.campoTelefono = new System.Windows.Forms.TextBox();
-            this.campoCp = new System.Windows.Forms.TextBox();
-            this.campoDireccion = new System.Windows.Forms.TextBox();
-            this.campoDni = new System.Windows.Forms.TextBox();
-            this.campoApellidos = new System.Windows.Forms.TextBox();
             this.campoNombre = new System.Windows.Forms.TextBox();
-            this.btnFoto = new System.Windows.Forms.Button();
+            this.campoApellidos = new System.Windows.Forms.TextBox();
+            this.campoDni = new System.Windows.Forms.TextBox();
             this.datePickerNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.campoDireccion = new System.Windows.Forms.TextBox();
+            this.campoCp = new System.Windows.Forms.TextBox();
+            this.comboLocalidad = new System.Windows.Forms.ComboBox();
+            this.campoTelefono = new System.Windows.Forms.TextBox();
+            this.campoEmail = new System.Windows.Forms.TextBox();
+            this.campoFoto = new System.Windows.Forms.TextBox();
+            this.btnFoto = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,23 +55,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupComplementarios = new System.Windows.Forms.GroupBox();
             this.groupInternet = new System.Windows.Forms.GroupBox();
-            this.checkInternetAvanzado = new System.Windows.Forms.CheckBox();
-            this.checkInternetMedio = new System.Windows.Forms.CheckBox();
-            this.checkInternetUsuario = new System.Windows.Forms.CheckBox();
             this.groupCalculo = new System.Windows.Forms.GroupBox();
-            this.checkCalculoAvanzado = new System.Windows.Forms.CheckBox();
-            this.checkCalculoMedio = new System.Windows.Forms.CheckBox();
-            this.checkCalculoUsuario = new System.Windows.Forms.CheckBox();
             this.campoObservaciones = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupTextos = new System.Windows.Forms.GroupBox();
-            this.checkTextosAvanzado = new System.Windows.Forms.CheckBox();
-            this.checkTextosMedio = new System.Windows.Forms.CheckBox();
-            this.checkTextosUsuario = new System.Windows.Forms.CheckBox();
             this.comboEstudios = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.radioTextoUsuario = new System.Windows.Forms.RadioButton();
+            this.radioTextoMedio = new System.Windows.Forms.RadioButton();
+            this.radioTextoAvanzado = new System.Windows.Forms.RadioButton();
+            this.radioCalculoAvanzado = new System.Windows.Forms.RadioButton();
+            this.radioCanlculoMedio = new System.Windows.Forms.RadioButton();
+            this.radioCalculoUsuario = new System.Windows.Forms.RadioButton();
+            this.radioInternetAvanzado = new System.Windows.Forms.RadioButton();
+            this.radioInternetMedio = new System.Windows.Forms.RadioButton();
+            this.radioInternetUsuario = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.groupPersonales.SuspendLayout();
             this.groupComplementarios.SuspendLayout();
@@ -102,17 +102,17 @@
             // 
             // groupPersonales
             // 
-            this.groupPersonales.Controls.Add(this.campoFoto);
-            this.groupPersonales.Controls.Add(this.comboLocalidad);
-            this.groupPersonales.Controls.Add(this.campoEmail);
-            this.groupPersonales.Controls.Add(this.campoTelefono);
-            this.groupPersonales.Controls.Add(this.campoCp);
-            this.groupPersonales.Controls.Add(this.campoDireccion);
-            this.groupPersonales.Controls.Add(this.campoDni);
-            this.groupPersonales.Controls.Add(this.campoApellidos);
             this.groupPersonales.Controls.Add(this.campoNombre);
-            this.groupPersonales.Controls.Add(this.btnFoto);
+            this.groupPersonales.Controls.Add(this.campoApellidos);
+            this.groupPersonales.Controls.Add(this.campoDni);
             this.groupPersonales.Controls.Add(this.datePickerNacimiento);
+            this.groupPersonales.Controls.Add(this.campoDireccion);
+            this.groupPersonales.Controls.Add(this.campoCp);
+            this.groupPersonales.Controls.Add(this.comboLocalidad);
+            this.groupPersonales.Controls.Add(this.campoTelefono);
+            this.groupPersonales.Controls.Add(this.campoEmail);
+            this.groupPersonales.Controls.Add(this.campoFoto);
+            this.groupPersonales.Controls.Add(this.btnFoto);
             this.groupPersonales.Controls.Add(this.label11);
             this.groupPersonales.Controls.Add(this.label10);
             this.groupPersonales.Controls.Add(this.label9);
@@ -131,61 +131,13 @@
             this.groupPersonales.TabStop = false;
             this.groupPersonales.Text = "DATOS PERSONALES";
             // 
-            // campoFoto
+            // campoNombre
             // 
-            this.campoFoto.Enabled = false;
-            this.campoFoto.Location = new System.Drawing.Point(226, 382);
-            this.campoFoto.Name = "campoFoto";
-            this.campoFoto.Size = new System.Drawing.Size(231, 20);
-            this.campoFoto.TabIndex = 21;
-            this.campoFoto.Tag = "FOTO";
-            // 
-            // comboLocalidad
-            // 
-            this.comboLocalidad.FormattingEnabled = true;
-            this.comboLocalidad.Location = new System.Drawing.Point(136, 264);
-            this.comboLocalidad.Name = "comboLocalidad";
-            this.comboLocalidad.Size = new System.Drawing.Size(149, 21);
-            this.comboLocalidad.TabIndex = 20;
-            // 
-            // campoEmail
-            // 
-            this.campoEmail.Location = new System.Drawing.Point(136, 344);
-            this.campoEmail.Name = "campoEmail";
-            this.campoEmail.Size = new System.Drawing.Size(321, 20);
-            this.campoEmail.TabIndex = 19;
-            this.campoEmail.Tag = "EMAIL";
-            // 
-            // campoTelefono
-            // 
-            this.campoTelefono.Location = new System.Drawing.Point(136, 304);
-            this.campoTelefono.Name = "campoTelefono";
-            this.campoTelefono.Size = new System.Drawing.Size(149, 20);
-            this.campoTelefono.TabIndex = 18;
-            this.campoTelefono.Tag = "TELÉFONO";
-            // 
-            // campoCp
-            // 
-            this.campoCp.Location = new System.Drawing.Point(136, 223);
-            this.campoCp.Name = "campoCp";
-            this.campoCp.Size = new System.Drawing.Size(112, 20);
-            this.campoCp.TabIndex = 16;
-            // 
-            // campoDireccion
-            // 
-            this.campoDireccion.Location = new System.Drawing.Point(136, 179);
-            this.campoDireccion.Name = "campoDireccion";
-            this.campoDireccion.Size = new System.Drawing.Size(321, 20);
-            this.campoDireccion.TabIndex = 15;
-            this.campoDireccion.Tag = "DIRECCIÓN";
-            // 
-            // campoDni
-            // 
-            this.campoDni.Location = new System.Drawing.Point(136, 104);
-            this.campoDni.Name = "campoDni";
-            this.campoDni.Size = new System.Drawing.Size(112, 20);
-            this.campoDni.TabIndex = 14;
-            this.campoDni.Tag = "DNI";
+            this.campoNombre.Location = new System.Drawing.Point(136, 33);
+            this.campoNombre.Name = "campoNombre";
+            this.campoNombre.Size = new System.Drawing.Size(200, 20);
+            this.campoNombre.TabIndex = 12;
+            this.campoNombre.Tag = "NOMBRE";
             // 
             // campoApellidos
             // 
@@ -195,13 +147,77 @@
             this.campoApellidos.TabIndex = 13;
             this.campoApellidos.Tag = "APELLIDOS";
             // 
-            // campoNombre
+            // campoDni
             // 
-            this.campoNombre.Location = new System.Drawing.Point(136, 33);
-            this.campoNombre.Name = "campoNombre";
-            this.campoNombre.Size = new System.Drawing.Size(200, 20);
-            this.campoNombre.TabIndex = 12;
-            this.campoNombre.Tag = "NOMBRE";
+            this.campoDni.Location = new System.Drawing.Point(136, 104);
+            this.campoDni.Name = "campoDni";
+            this.campoDni.Size = new System.Drawing.Size(112, 20);
+            this.campoDni.TabIndex = 14;
+            this.campoDni.Tag = "DNI";
+            // 
+            // datePickerNacimiento
+            // 
+            this.datePickerNacimiento.Location = new System.Drawing.Point(136, 142);
+            this.datePickerNacimiento.Name = "datePickerNacimiento";
+            this.datePickerNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.datePickerNacimiento.TabIndex = 10;
+            this.datePickerNacimiento.Tag = "FECHA";
+            // 
+            // campoDireccion
+            // 
+            this.campoDireccion.Location = new System.Drawing.Point(136, 179);
+            this.campoDireccion.Name = "campoDireccion";
+            this.campoDireccion.Size = new System.Drawing.Size(321, 20);
+            this.campoDireccion.TabIndex = 15;
+            this.campoDireccion.Tag = "DIRECCIÓN";
+            // 
+            // campoCp
+            // 
+            this.campoCp.Location = new System.Drawing.Point(136, 223);
+            this.campoCp.Name = "campoCp";
+            this.campoCp.Size = new System.Drawing.Size(112, 20);
+            this.campoCp.TabIndex = 16;
+            // 
+            // comboLocalidad
+            // 
+            this.comboLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboLocalidad.FormattingEnabled = true;
+            this.comboLocalidad.Items.AddRange(new object[] {
+            "Seleccione",
+            "Madrid",
+            "Cuenca",
+            "Albacete",
+            "Segovia",
+            "Zaragoza"});
+            this.comboLocalidad.Location = new System.Drawing.Point(136, 264);
+            this.comboLocalidad.Name = "comboLocalidad";
+            this.comboLocalidad.Size = new System.Drawing.Size(149, 21);
+            this.comboLocalidad.TabIndex = 20;
+            // 
+            // campoTelefono
+            // 
+            this.campoTelefono.Location = new System.Drawing.Point(136, 304);
+            this.campoTelefono.Name = "campoTelefono";
+            this.campoTelefono.Size = new System.Drawing.Size(149, 20);
+            this.campoTelefono.TabIndex = 18;
+            this.campoTelefono.Tag = "TELÉFONO";
+            // 
+            // campoEmail
+            // 
+            this.campoEmail.Location = new System.Drawing.Point(136, 344);
+            this.campoEmail.Name = "campoEmail";
+            this.campoEmail.Size = new System.Drawing.Size(321, 20);
+            this.campoEmail.TabIndex = 19;
+            this.campoEmail.Tag = "EMAIL";
+            // 
+            // campoFoto
+            // 
+            this.campoFoto.Enabled = false;
+            this.campoFoto.Location = new System.Drawing.Point(226, 382);
+            this.campoFoto.Name = "campoFoto";
+            this.campoFoto.Size = new System.Drawing.Size(231, 20);
+            this.campoFoto.TabIndex = 21;
+            this.campoFoto.Tag = "FOTO";
             // 
             // btnFoto
             // 
@@ -211,14 +227,6 @@
             this.btnFoto.TabIndex = 11;
             this.btnFoto.Text = "Anexar foto";
             this.btnFoto.UseVisualStyleBackColor = true;
-            // 
-            // datePickerNacimiento
-            // 
-            this.datePickerNacimiento.Location = new System.Drawing.Point(136, 142);
-            this.datePickerNacimiento.Name = "datePickerNacimiento";
-            this.datePickerNacimiento.Size = new System.Drawing.Size(200, 20);
-            this.datePickerNacimiento.TabIndex = 10;
-            this.datePickerNacimiento.Tag = "FECHA";
             // 
             // label11
             // 
@@ -312,12 +320,12 @@
             // 
             // groupComplementarios
             // 
-            this.groupComplementarios.Controls.Add(this.groupInternet);
+            this.groupComplementarios.Controls.Add(this.comboEstudios);
+            this.groupComplementarios.Controls.Add(this.groupTextos);
             this.groupComplementarios.Controls.Add(this.groupCalculo);
+            this.groupComplementarios.Controls.Add(this.groupInternet);
             this.groupComplementarios.Controls.Add(this.campoObservaciones);
             this.groupComplementarios.Controls.Add(this.label14);
-            this.groupComplementarios.Controls.Add(this.groupTextos);
-            this.groupComplementarios.Controls.Add(this.comboEstudios);
             this.groupComplementarios.Controls.Add(this.label13);
             this.groupComplementarios.Controls.Add(this.label12);
             this.groupComplementarios.ForeColor = System.Drawing.Color.Firebrick;
@@ -330,95 +338,31 @@
             // 
             // groupInternet
             // 
-            this.groupInternet.Controls.Add(this.checkInternetAvanzado);
-            this.groupInternet.Controls.Add(this.checkInternetMedio);
-            this.groupInternet.Controls.Add(this.checkInternetUsuario);
+            this.groupInternet.Controls.Add(this.radioInternetAvanzado);
+            this.groupInternet.Controls.Add(this.radioInternetMedio);
+            this.groupInternet.Controls.Add(this.radioInternetUsuario);
             this.groupInternet.ForeColor = System.Drawing.Color.Firebrick;
             this.groupInternet.Location = new System.Drawing.Point(30, 239);
             this.groupInternet.Name = "groupInternet";
             this.groupInternet.Size = new System.Drawing.Size(440, 44);
             this.groupInternet.TabIndex = 4;
             this.groupInternet.TabStop = false;
+            this.groupInternet.Tag = "INTERNET";
             this.groupInternet.Text = "Internet";
-            // 
-            // checkInternetAvanzado
-            // 
-            this.checkInternetAvanzado.AutoSize = true;
-            this.checkInternetAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkInternetAvanzado.Location = new System.Drawing.Point(324, 19);
-            this.checkInternetAvanzado.Name = "checkInternetAvanzado";
-            this.checkInternetAvanzado.Size = new System.Drawing.Size(79, 19);
-            this.checkInternetAvanzado.TabIndex = 2;
-            this.checkInternetAvanzado.Text = "Avanzado";
-            this.checkInternetAvanzado.UseVisualStyleBackColor = true;
-            // 
-            // checkInternetMedio
-            // 
-            this.checkInternetMedio.AutoSize = true;
-            this.checkInternetMedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkInternetMedio.Location = new System.Drawing.Point(175, 19);
-            this.checkInternetMedio.Name = "checkInternetMedio";
-            this.checkInternetMedio.Size = new System.Drawing.Size(61, 19);
-            this.checkInternetMedio.TabIndex = 1;
-            this.checkInternetMedio.Text = "Medio";
-            this.checkInternetMedio.UseVisualStyleBackColor = true;
-            // 
-            // checkInternetUsuario
-            // 
-            this.checkInternetUsuario.AutoSize = true;
-            this.checkInternetUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkInternetUsuario.Location = new System.Drawing.Point(27, 19);
-            this.checkInternetUsuario.Name = "checkInternetUsuario";
-            this.checkInternetUsuario.Size = new System.Drawing.Size(69, 19);
-            this.checkInternetUsuario.TabIndex = 0;
-            this.checkInternetUsuario.Text = "Usuario";
-            this.checkInternetUsuario.UseVisualStyleBackColor = true;
             // 
             // groupCalculo
             // 
-            this.groupCalculo.Controls.Add(this.checkCalculoAvanzado);
-            this.groupCalculo.Controls.Add(this.checkCalculoMedio);
-            this.groupCalculo.Controls.Add(this.checkCalculoUsuario);
+            this.groupCalculo.Controls.Add(this.radioCalculoAvanzado);
+            this.groupCalculo.Controls.Add(this.radioCanlculoMedio);
+            this.groupCalculo.Controls.Add(this.radioCalculoUsuario);
             this.groupCalculo.ForeColor = System.Drawing.Color.Firebrick;
             this.groupCalculo.Location = new System.Drawing.Point(30, 177);
             this.groupCalculo.Name = "groupCalculo";
             this.groupCalculo.Size = new System.Drawing.Size(440, 44);
             this.groupCalculo.TabIndex = 7;
             this.groupCalculo.TabStop = false;
+            this.groupCalculo.Tag = "HOJA DE CÁLCULO";
             this.groupCalculo.Text = "Hoja de cálculo";
-            // 
-            // checkCalculoAvanzado
-            // 
-            this.checkCalculoAvanzado.AutoSize = true;
-            this.checkCalculoAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkCalculoAvanzado.Location = new System.Drawing.Point(324, 19);
-            this.checkCalculoAvanzado.Name = "checkCalculoAvanzado";
-            this.checkCalculoAvanzado.Size = new System.Drawing.Size(79, 19);
-            this.checkCalculoAvanzado.TabIndex = 2;
-            this.checkCalculoAvanzado.Text = "Avanzado";
-            this.checkCalculoAvanzado.UseVisualStyleBackColor = true;
-            // 
-            // checkCalculoMedio
-            // 
-            this.checkCalculoMedio.AutoSize = true;
-            this.checkCalculoMedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkCalculoMedio.Location = new System.Drawing.Point(175, 19);
-            this.checkCalculoMedio.Name = "checkCalculoMedio";
-            this.checkCalculoMedio.Size = new System.Drawing.Size(61, 19);
-            this.checkCalculoMedio.TabIndex = 1;
-            this.checkCalculoMedio.Text = "Medio";
-            this.checkCalculoMedio.UseVisualStyleBackColor = true;
-            // 
-            // checkCalculoUsuario
-            // 
-            this.checkCalculoUsuario.AutoSize = true;
-            this.checkCalculoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkCalculoUsuario.Location = new System.Drawing.Point(27, 19);
-            this.checkCalculoUsuario.Name = "checkCalculoUsuario";
-            this.checkCalculoUsuario.Size = new System.Drawing.Size(69, 19);
-            this.checkCalculoUsuario.TabIndex = 0;
-            this.checkCalculoUsuario.Text = "Usuario";
-            this.checkCalculoUsuario.UseVisualStyleBackColor = true;
             // 
             // campoObservaciones
             // 
@@ -440,53 +384,29 @@
             // 
             // groupTextos
             // 
-            this.groupTextos.Controls.Add(this.checkTextosAvanzado);
-            this.groupTextos.Controls.Add(this.checkTextosMedio);
-            this.groupTextos.Controls.Add(this.checkTextosUsuario);
+            this.groupTextos.Controls.Add(this.radioTextoAvanzado);
+            this.groupTextos.Controls.Add(this.radioTextoMedio);
+            this.groupTextos.Controls.Add(this.radioTextoUsuario);
             this.groupTextos.ForeColor = System.Drawing.Color.Firebrick;
             this.groupTextos.Location = new System.Drawing.Point(30, 116);
             this.groupTextos.Name = "groupTextos";
             this.groupTextos.Size = new System.Drawing.Size(440, 44);
             this.groupTextos.TabIndex = 3;
             this.groupTextos.TabStop = false;
+            this.groupTextos.Tag = "TRATAMIENTO DE TEXTOS";
             this.groupTextos.Text = "Tratamiento de textos";
-            // 
-            // checkTextosAvanzado
-            // 
-            this.checkTextosAvanzado.AutoSize = true;
-            this.checkTextosAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkTextosAvanzado.Location = new System.Drawing.Point(324, 19);
-            this.checkTextosAvanzado.Name = "checkTextosAvanzado";
-            this.checkTextosAvanzado.Size = new System.Drawing.Size(79, 19);
-            this.checkTextosAvanzado.TabIndex = 2;
-            this.checkTextosAvanzado.Text = "Avanzado";
-            this.checkTextosAvanzado.UseVisualStyleBackColor = true;
-            // 
-            // checkTextosMedio
-            // 
-            this.checkTextosMedio.AutoSize = true;
-            this.checkTextosMedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkTextosMedio.Location = new System.Drawing.Point(175, 19);
-            this.checkTextosMedio.Name = "checkTextosMedio";
-            this.checkTextosMedio.Size = new System.Drawing.Size(61, 19);
-            this.checkTextosMedio.TabIndex = 1;
-            this.checkTextosMedio.Text = "Medio";
-            this.checkTextosMedio.UseVisualStyleBackColor = true;
-            // 
-            // checkTextosUsuario
-            // 
-            this.checkTextosUsuario.AutoSize = true;
-            this.checkTextosUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkTextosUsuario.Location = new System.Drawing.Point(27, 19);
-            this.checkTextosUsuario.Name = "checkTextosUsuario";
-            this.checkTextosUsuario.Size = new System.Drawing.Size(69, 19);
-            this.checkTextosUsuario.TabIndex = 0;
-            this.checkTextosUsuario.Text = "Usuario";
-            this.checkTextosUsuario.UseVisualStyleBackColor = true;
             // 
             // comboEstudios
             // 
+            this.comboEstudios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboEstudios.FormattingEnabled = true;
+            this.comboEstudios.Items.AddRange(new object[] {
+            "Seleccione",
+            "ESO",
+            "Grado Medio",
+            "Bachillerato",
+            "Grado Superior",
+            "Universitarios"});
             this.comboEstudios.Location = new System.Drawing.Point(165, 33);
             this.comboEstudios.Name = "comboEstudios";
             this.comboEstudios.Size = new System.Drawing.Size(174, 21);
@@ -511,21 +431,129 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Estudios finalizados";
             // 
-            // button1
+            // btnRegistrar
             // 
-            this.button1.Location = new System.Drawing.Point(405, 543);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(282, 53);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "REGISTRAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Location = new System.Drawing.Point(405, 543);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(282, 53);
+            this.btnRegistrar.TabIndex = 3;
+            this.btnRegistrar.Text = "REGISTRAR";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            // 
+            // radioTextoUsuario
+            // 
+            this.radioTextoUsuario.AutoSize = true;
+            this.radioTextoUsuario.Location = new System.Drawing.Point(35, 19);
+            this.radioTextoUsuario.Name = "radioTextoUsuario";
+            this.radioTextoUsuario.Size = new System.Drawing.Size(61, 17);
+            this.radioTextoUsuario.TabIndex = 8;
+            this.radioTextoUsuario.TabStop = true;
+            this.radioTextoUsuario.Tag = "Usuario";
+            this.radioTextoUsuario.Text = "Usuario";
+            this.radioTextoUsuario.UseVisualStyleBackColor = true;
+            // 
+            // radioTextoMedio
+            // 
+            this.radioTextoMedio.AutoSize = true;
+            this.radioTextoMedio.Location = new System.Drawing.Point(176, 19);
+            this.radioTextoMedio.Name = "radioTextoMedio";
+            this.radioTextoMedio.Size = new System.Drawing.Size(54, 17);
+            this.radioTextoMedio.TabIndex = 9;
+            this.radioTextoMedio.TabStop = true;
+            this.radioTextoMedio.Tag = "Medio";
+            this.radioTextoMedio.Text = "Medio";
+            this.radioTextoMedio.UseVisualStyleBackColor = true;
+            // 
+            // radioTextoAvanzado
+            // 
+            this.radioTextoAvanzado.AutoSize = true;
+            this.radioTextoAvanzado.Location = new System.Drawing.Point(311, 19);
+            this.radioTextoAvanzado.Name = "radioTextoAvanzado";
+            this.radioTextoAvanzado.Size = new System.Drawing.Size(73, 17);
+            this.radioTextoAvanzado.TabIndex = 10;
+            this.radioTextoAvanzado.TabStop = true;
+            this.radioTextoAvanzado.Tag = "Avanzado";
+            this.radioTextoAvanzado.Text = "Avanzado";
+            this.radioTextoAvanzado.UseVisualStyleBackColor = true;
+            // 
+            // radioCalculoAvanzado
+            // 
+            this.radioCalculoAvanzado.AutoSize = true;
+            this.radioCalculoAvanzado.Location = new System.Drawing.Point(311, 19);
+            this.radioCalculoAvanzado.Name = "radioCalculoAvanzado";
+            this.radioCalculoAvanzado.Size = new System.Drawing.Size(73, 17);
+            this.radioCalculoAvanzado.TabIndex = 13;
+            this.radioCalculoAvanzado.TabStop = true;
+            this.radioCalculoAvanzado.Tag = "Avanzado";
+            this.radioCalculoAvanzado.Text = "Avanzado";
+            this.radioCalculoAvanzado.UseVisualStyleBackColor = true;
+            // 
+            // radioCanlculoMedio
+            // 
+            this.radioCanlculoMedio.AutoSize = true;
+            this.radioCanlculoMedio.Location = new System.Drawing.Point(176, 19);
+            this.radioCanlculoMedio.Name = "radioCanlculoMedio";
+            this.radioCanlculoMedio.Size = new System.Drawing.Size(54, 17);
+            this.radioCanlculoMedio.TabIndex = 12;
+            this.radioCanlculoMedio.TabStop = true;
+            this.radioCanlculoMedio.Tag = "Medio";
+            this.radioCanlculoMedio.Text = "Medio";
+            this.radioCanlculoMedio.UseVisualStyleBackColor = true;
+            // 
+            // radioCalculoUsuario
+            // 
+            this.radioCalculoUsuario.AutoSize = true;
+            this.radioCalculoUsuario.Location = new System.Drawing.Point(35, 19);
+            this.radioCalculoUsuario.Name = "radioCalculoUsuario";
+            this.radioCalculoUsuario.Size = new System.Drawing.Size(61, 17);
+            this.radioCalculoUsuario.TabIndex = 11;
+            this.radioCalculoUsuario.TabStop = true;
+            this.radioCalculoUsuario.Tag = "Usuario";
+            this.radioCalculoUsuario.Text = "Usuario";
+            this.radioCalculoUsuario.UseVisualStyleBackColor = true;
+            // 
+            // radioInternetAvanzado
+            // 
+            this.radioInternetAvanzado.AutoSize = true;
+            this.radioInternetAvanzado.Location = new System.Drawing.Point(311, 19);
+            this.radioInternetAvanzado.Name = "radioInternetAvanzado";
+            this.radioInternetAvanzado.Size = new System.Drawing.Size(73, 17);
+            this.radioInternetAvanzado.TabIndex = 16;
+            this.radioInternetAvanzado.TabStop = true;
+            this.radioInternetAvanzado.Tag = "Avanzado";
+            this.radioInternetAvanzado.Text = "Avanzado";
+            this.radioInternetAvanzado.UseVisualStyleBackColor = true;
+            // 
+            // radioInternetMedio
+            // 
+            this.radioInternetMedio.AutoSize = true;
+            this.radioInternetMedio.Location = new System.Drawing.Point(176, 19);
+            this.radioInternetMedio.Name = "radioInternetMedio";
+            this.radioInternetMedio.Size = new System.Drawing.Size(54, 17);
+            this.radioInternetMedio.TabIndex = 15;
+            this.radioInternetMedio.TabStop = true;
+            this.radioInternetMedio.Tag = "Medio";
+            this.radioInternetMedio.Text = "Medio";
+            this.radioInternetMedio.UseVisualStyleBackColor = true;
+            // 
+            // radioInternetUsuario
+            // 
+            this.radioInternetUsuario.AutoSize = true;
+            this.radioInternetUsuario.Location = new System.Drawing.Point(35, 19);
+            this.radioInternetUsuario.Name = "radioInternetUsuario";
+            this.radioInternetUsuario.Size = new System.Drawing.Size(61, 17);
+            this.radioInternetUsuario.TabIndex = 14;
+            this.radioInternetUsuario.TabStop = true;
+            this.radioInternetUsuario.Tag = "Usuario";
+            this.radioInternetUsuario.Text = "Usuario";
+            this.radioInternetUsuario.UseVisualStyleBackColor = true;
             // 
             // AltaAdministracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 631);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.groupComplementarios);
             this.Controls.Add(this.groupPersonales);
             this.Controls.Add(this.panel1);
@@ -535,7 +563,8 @@
             this.MinimumSize = new System.Drawing.Size(1100, 670);
             this.Name = "AltaAdministracion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AltaAdministracion";
+            this.Text = "Nuevos candidatos para puestos de Administración";
+            this.Load += new System.EventHandler(this.AltaAdministracion_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupPersonales.ResumeLayout(false);
@@ -582,20 +611,20 @@
         private System.Windows.Forms.TextBox campoObservaciones;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupTextos;
-        private System.Windows.Forms.CheckBox checkTextosAvanzado;
-        private System.Windows.Forms.CheckBox checkTextosMedio;
-        private System.Windows.Forms.CheckBox checkTextosUsuario;
         private System.Windows.Forms.ComboBox comboEstudios;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupInternet;
-        private System.Windows.Forms.CheckBox checkInternetAvanzado;
-        private System.Windows.Forms.CheckBox checkInternetMedio;
-        private System.Windows.Forms.CheckBox checkInternetUsuario;
         private System.Windows.Forms.GroupBox groupCalculo;
-        private System.Windows.Forms.CheckBox checkCalculoAvanzado;
-        private System.Windows.Forms.CheckBox checkCalculoMedio;
-        private System.Windows.Forms.CheckBox checkCalculoUsuario;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.RadioButton radioInternetAvanzado;
+        private System.Windows.Forms.RadioButton radioInternetMedio;
+        private System.Windows.Forms.RadioButton radioInternetUsuario;
+        private System.Windows.Forms.RadioButton radioCalculoAvanzado;
+        private System.Windows.Forms.RadioButton radioCanlculoMedio;
+        private System.Windows.Forms.RadioButton radioCalculoUsuario;
+        private System.Windows.Forms.RadioButton radioTextoAvanzado;
+        private System.Windows.Forms.RadioButton radioTextoMedio;
+        private System.Windows.Forms.RadioButton radioTextoUsuario;
     }
 }

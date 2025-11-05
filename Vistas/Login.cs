@@ -87,7 +87,7 @@ namespace MnayaRRHH
                 else
                 {
                     MessageBox.Show("Error de identificación. Inténtelo de nuevo.","LOGIN",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    GestionFormularios.ReseteaFormulario(groupLogin);
+                    Validaciones.ResetearFormulario(groupLogin);
                 }
             }
         }

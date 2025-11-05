@@ -352,11 +352,11 @@
         private System.Windows.Forms.Button btnBuscaCandidatos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelAdmin;
-        private System.Windows.Forms.Label labelAlmacen;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView tablaAlmacen;
         private System.Windows.Forms.DataGridView tablaAdmin;
+        public System.Windows.Forms.Label labelAdmin;
+        public System.Windows.Forms.Label labelAlmacen;
     }
 }

@@ -124,7 +124,6 @@
     <Compile Include="Model\CandidatoAlmacen.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Utilidades\DatosConexion.cs" />
-    <Compile Include="Utilidades\GestionFormularios.cs" />
     <Compile Include="Utilidades\Validaciones.cs" />
     <Compile Include="Vistas\AltaAdministracion.cs">
       <SubType>Form</SubType>

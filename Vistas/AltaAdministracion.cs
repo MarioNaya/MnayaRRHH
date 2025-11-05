@@ -16,5 +16,10 @@ namespace MnayaRRHH.Vistas
         {
             InitializeComponent();
         }
+
+        private void AltaAdministracion_Load(object sender, EventArgs e)
+        {
+            datePickerNacimiento.MaxDate = DateTime.Now.AddYears(-18);
+        }
     }
 }
