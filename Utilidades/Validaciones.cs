@@ -159,7 +159,7 @@ namespace MnayaRRHH.Utilidades
             }
         }
 
-        public static void ValidarRadioSeleccionado(GroupBox grp)
+        public static bool ValidarRadioSeleccionado(GroupBox grp)
         {
             bool algunoSeleccionado = false;
             foreach (Control c in grp.Controls)
@@ -168,13 +168,14 @@ namespace MnayaRRHH.Utilidades
                 if (rdo.Checked)
                 {
                     algunoSeleccionado = true;
-                    break;
+                    return true;
                 }
             }
             if (!algunoSeleccionado)
             {
                 MessageBox.Show($"Debe seleccionar una opción para {grp.Tag}.", "Validacion de campo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            return false;
         }
     }
 }

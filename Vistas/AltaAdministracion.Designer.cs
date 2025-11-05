@@ -54,30 +54,31 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupComplementarios = new System.Windows.Forms.GroupBox();
-            this.groupInternet = new System.Windows.Forms.GroupBox();
-            this.groupCalculo = new System.Windows.Forms.GroupBox();
-            this.campoObservaciones = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.groupTextos = new System.Windows.Forms.GroupBox();
             this.comboEstudios = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.radioTextoUsuario = new System.Windows.Forms.RadioButton();
-            this.radioTextoMedio = new System.Windows.Forms.RadioButton();
+            this.groupTextos = new System.Windows.Forms.GroupBox();
             this.radioTextoAvanzado = new System.Windows.Forms.RadioButton();
+            this.radioTextoMedio = new System.Windows.Forms.RadioButton();
+            this.radioTextoUsuario = new System.Windows.Forms.RadioButton();
+            this.groupCalculo = new System.Windows.Forms.GroupBox();
             this.radioCalculoAvanzado = new System.Windows.Forms.RadioButton();
             this.radioCanlculoMedio = new System.Windows.Forms.RadioButton();
             this.radioCalculoUsuario = new System.Windows.Forms.RadioButton();
+            this.groupInternet = new System.Windows.Forms.GroupBox();
             this.radioInternetAvanzado = new System.Windows.Forms.RadioButton();
             this.radioInternetMedio = new System.Windows.Forms.RadioButton();
             this.radioInternetUsuario = new System.Windows.Forms.RadioButton();
+            this.campoObservaciones = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.selector = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.groupPersonales.SuspendLayout();
             this.groupComplementarios.SuspendLayout();
-            this.groupInternet.SuspendLayout();
-            this.groupCalculo.SuspendLayout();
             this.groupTextos.SuspendLayout();
+            this.groupCalculo.SuspendLayout();
+            this.groupInternet.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -129,6 +130,7 @@
             this.groupPersonales.Size = new System.Drawing.Size(495, 437);
             this.groupPersonales.TabIndex = 1;
             this.groupPersonales.TabStop = false;
+            this.groupPersonales.Tag = "DIRECCIÓN";
             this.groupPersonales.Text = "DATOS PERSONALES";
             // 
             // campoNombre
@@ -138,6 +140,7 @@
             this.campoNombre.Size = new System.Drawing.Size(200, 20);
             this.campoNombre.TabIndex = 12;
             this.campoNombre.Tag = "NOMBRE";
+            this.campoNombre.Enter += new System.EventHandler(this.campoNombre_Enter);
             // 
             // campoApellidos
             // 
@@ -146,6 +149,7 @@
             this.campoApellidos.Size = new System.Drawing.Size(200, 20);
             this.campoApellidos.TabIndex = 13;
             this.campoApellidos.Tag = "APELLIDOS";
+            this.campoApellidos.Enter += new System.EventHandler(this.campoApellidos_Enter);
             // 
             // campoDni
             // 
@@ -154,6 +158,7 @@
             this.campoDni.Size = new System.Drawing.Size(112, 20);
             this.campoDni.TabIndex = 14;
             this.campoDni.Tag = "DNI";
+            this.campoDni.Enter += new System.EventHandler(this.campoDni_Enter);
             // 
             // datePickerNacimiento
             // 
@@ -170,6 +175,7 @@
             this.campoDireccion.Size = new System.Drawing.Size(321, 20);
             this.campoDireccion.TabIndex = 15;
             this.campoDireccion.Tag = "DIRECCIÓN";
+            this.campoDireccion.Enter += new System.EventHandler(this.campoDireccion_Enter);
             // 
             // campoCp
             // 
@@ -177,6 +183,8 @@
             this.campoCp.Name = "campoCp";
             this.campoCp.Size = new System.Drawing.Size(112, 20);
             this.campoCp.TabIndex = 16;
+            this.campoCp.Tag = "CÓDIGO POSTAL";
+            this.campoCp.Enter += new System.EventHandler(this.campoCp_Enter);
             // 
             // comboLocalidad
             // 
@@ -193,6 +201,7 @@
             this.comboLocalidad.Name = "comboLocalidad";
             this.comboLocalidad.Size = new System.Drawing.Size(149, 21);
             this.comboLocalidad.TabIndex = 20;
+            this.comboLocalidad.Tag = "LOCALIDAD";
             // 
             // campoTelefono
             // 
@@ -201,6 +210,7 @@
             this.campoTelefono.Size = new System.Drawing.Size(149, 20);
             this.campoTelefono.TabIndex = 18;
             this.campoTelefono.Tag = "TELÉFONO";
+            this.campoTelefono.Enter += new System.EventHandler(this.campoTelefono_Enter);
             // 
             // campoEmail
             // 
@@ -209,6 +219,7 @@
             this.campoEmail.Size = new System.Drawing.Size(321, 20);
             this.campoEmail.TabIndex = 19;
             this.campoEmail.Tag = "EMAIL";
+            this.campoEmail.Enter += new System.EventHandler(this.campoEmail_Enter);
             // 
             // campoFoto
             // 
@@ -227,6 +238,7 @@
             this.btnFoto.TabIndex = 11;
             this.btnFoto.Text = "Anexar foto";
             this.btnFoto.UseVisualStyleBackColor = true;
+            this.btnFoto.Click += new System.EventHandler(this.btnFoto_Click);
             // 
             // label11
             // 
@@ -336,66 +348,6 @@
             this.groupComplementarios.TabStop = false;
             this.groupComplementarios.Text = "DATOS COMPLEMENTARIOS";
             // 
-            // groupInternet
-            // 
-            this.groupInternet.Controls.Add(this.radioInternetAvanzado);
-            this.groupInternet.Controls.Add(this.radioInternetMedio);
-            this.groupInternet.Controls.Add(this.radioInternetUsuario);
-            this.groupInternet.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupInternet.Location = new System.Drawing.Point(30, 239);
-            this.groupInternet.Name = "groupInternet";
-            this.groupInternet.Size = new System.Drawing.Size(440, 44);
-            this.groupInternet.TabIndex = 4;
-            this.groupInternet.TabStop = false;
-            this.groupInternet.Tag = "INTERNET";
-            this.groupInternet.Text = "Internet";
-            // 
-            // groupCalculo
-            // 
-            this.groupCalculo.Controls.Add(this.radioCalculoAvanzado);
-            this.groupCalculo.Controls.Add(this.radioCanlculoMedio);
-            this.groupCalculo.Controls.Add(this.radioCalculoUsuario);
-            this.groupCalculo.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupCalculo.Location = new System.Drawing.Point(30, 177);
-            this.groupCalculo.Name = "groupCalculo";
-            this.groupCalculo.Size = new System.Drawing.Size(440, 44);
-            this.groupCalculo.TabIndex = 7;
-            this.groupCalculo.TabStop = false;
-            this.groupCalculo.Tag = "HOJA DE CÁLCULO";
-            this.groupCalculo.Text = "Hoja de cálculo";
-            // 
-            // campoObservaciones
-            // 
-            this.campoObservaciones.Location = new System.Drawing.Point(30, 334);
-            this.campoObservaciones.Multiline = true;
-            this.campoObservaciones.Name = "campoObservaciones";
-            this.campoObservaciones.Size = new System.Drawing.Size(440, 68);
-            this.campoObservaciones.TabIndex = 6;
-            this.campoObservaciones.Tag = "OBSERVACIONES";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 304);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(78, 13);
-            this.label14.TabIndex = 5;
-            this.label14.Text = "Observaciones";
-            // 
-            // groupTextos
-            // 
-            this.groupTextos.Controls.Add(this.radioTextoAvanzado);
-            this.groupTextos.Controls.Add(this.radioTextoMedio);
-            this.groupTextos.Controls.Add(this.radioTextoUsuario);
-            this.groupTextos.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupTextos.Location = new System.Drawing.Point(30, 116);
-            this.groupTextos.Name = "groupTextos";
-            this.groupTextos.Size = new System.Drawing.Size(440, 44);
-            this.groupTextos.TabIndex = 3;
-            this.groupTextos.TabStop = false;
-            this.groupTextos.Tag = "TRATAMIENTO DE TEXTOS";
-            this.groupTextos.Text = "Tratamiento de textos";
-            // 
             // comboEstudios
             // 
             this.comboEstudios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -413,44 +365,31 @@
             this.comboEstudios.TabIndex = 2;
             this.comboEstudios.Tag = "ESTUDIOS FINALIZADOS";
             // 
-            // label13
+            // groupTextos
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 86);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(85, 13);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Nivel informática";
+            this.groupTextos.Controls.Add(this.radioTextoAvanzado);
+            this.groupTextos.Controls.Add(this.radioTextoMedio);
+            this.groupTextos.Controls.Add(this.radioTextoUsuario);
+            this.groupTextos.ForeColor = System.Drawing.Color.Firebrick;
+            this.groupTextos.Location = new System.Drawing.Point(30, 116);
+            this.groupTextos.Name = "groupTextos";
+            this.groupTextos.Size = new System.Drawing.Size(440, 44);
+            this.groupTextos.TabIndex = 3;
+            this.groupTextos.TabStop = false;
+            this.groupTextos.Tag = "TRATAMIENTO DE TEXTOS";
+            this.groupTextos.Text = "Tratamiento de textos";
             // 
-            // label12
+            // radioTextoAvanzado
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(27, 36);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(99, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Estudios finalizados";
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(405, 543);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(282, 53);
-            this.btnRegistrar.TabIndex = 3;
-            this.btnRegistrar.Text = "REGISTRAR";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            // 
-            // radioTextoUsuario
-            // 
-            this.radioTextoUsuario.AutoSize = true;
-            this.radioTextoUsuario.Location = new System.Drawing.Point(35, 19);
-            this.radioTextoUsuario.Name = "radioTextoUsuario";
-            this.radioTextoUsuario.Size = new System.Drawing.Size(61, 17);
-            this.radioTextoUsuario.TabIndex = 8;
-            this.radioTextoUsuario.TabStop = true;
-            this.radioTextoUsuario.Tag = "Usuario";
-            this.radioTextoUsuario.Text = "Usuario";
-            this.radioTextoUsuario.UseVisualStyleBackColor = true;
+            this.radioTextoAvanzado.AutoSize = true;
+            this.radioTextoAvanzado.Location = new System.Drawing.Point(311, 19);
+            this.radioTextoAvanzado.Name = "radioTextoAvanzado";
+            this.radioTextoAvanzado.Size = new System.Drawing.Size(73, 17);
+            this.radioTextoAvanzado.TabIndex = 10;
+            this.radioTextoAvanzado.TabStop = true;
+            this.radioTextoAvanzado.Tag = "Avanzado";
+            this.radioTextoAvanzado.Text = "Avanzado";
+            this.radioTextoAvanzado.UseVisualStyleBackColor = true;
             // 
             // radioTextoMedio
             // 
@@ -464,17 +403,31 @@
             this.radioTextoMedio.Text = "Medio";
             this.radioTextoMedio.UseVisualStyleBackColor = true;
             // 
-            // radioTextoAvanzado
+            // radioTextoUsuario
             // 
-            this.radioTextoAvanzado.AutoSize = true;
-            this.radioTextoAvanzado.Location = new System.Drawing.Point(311, 19);
-            this.radioTextoAvanzado.Name = "radioTextoAvanzado";
-            this.radioTextoAvanzado.Size = new System.Drawing.Size(73, 17);
-            this.radioTextoAvanzado.TabIndex = 10;
-            this.radioTextoAvanzado.TabStop = true;
-            this.radioTextoAvanzado.Tag = "Avanzado";
-            this.radioTextoAvanzado.Text = "Avanzado";
-            this.radioTextoAvanzado.UseVisualStyleBackColor = true;
+            this.radioTextoUsuario.AutoSize = true;
+            this.radioTextoUsuario.Location = new System.Drawing.Point(35, 19);
+            this.radioTextoUsuario.Name = "radioTextoUsuario";
+            this.radioTextoUsuario.Size = new System.Drawing.Size(61, 17);
+            this.radioTextoUsuario.TabIndex = 8;
+            this.radioTextoUsuario.TabStop = true;
+            this.radioTextoUsuario.Tag = "Usuario";
+            this.radioTextoUsuario.Text = "Usuario";
+            this.radioTextoUsuario.UseVisualStyleBackColor = true;
+            // 
+            // groupCalculo
+            // 
+            this.groupCalculo.Controls.Add(this.radioCalculoAvanzado);
+            this.groupCalculo.Controls.Add(this.radioCanlculoMedio);
+            this.groupCalculo.Controls.Add(this.radioCalculoUsuario);
+            this.groupCalculo.ForeColor = System.Drawing.Color.Firebrick;
+            this.groupCalculo.Location = new System.Drawing.Point(30, 177);
+            this.groupCalculo.Name = "groupCalculo";
+            this.groupCalculo.Size = new System.Drawing.Size(440, 44);
+            this.groupCalculo.TabIndex = 7;
+            this.groupCalculo.TabStop = false;
+            this.groupCalculo.Tag = "HOJA DE CÁLCULO";
+            this.groupCalculo.Text = "Hoja de cálculo";
             // 
             // radioCalculoAvanzado
             // 
@@ -512,6 +465,20 @@
             this.radioCalculoUsuario.Text = "Usuario";
             this.radioCalculoUsuario.UseVisualStyleBackColor = true;
             // 
+            // groupInternet
+            // 
+            this.groupInternet.Controls.Add(this.radioInternetAvanzado);
+            this.groupInternet.Controls.Add(this.radioInternetMedio);
+            this.groupInternet.Controls.Add(this.radioInternetUsuario);
+            this.groupInternet.ForeColor = System.Drawing.Color.Firebrick;
+            this.groupInternet.Location = new System.Drawing.Point(30, 239);
+            this.groupInternet.Name = "groupInternet";
+            this.groupInternet.Size = new System.Drawing.Size(440, 44);
+            this.groupInternet.TabIndex = 4;
+            this.groupInternet.TabStop = false;
+            this.groupInternet.Tag = "INTERNET";
+            this.groupInternet.Text = "Internet";
+            // 
             // radioInternetAvanzado
             // 
             this.radioInternetAvanzado.AutoSize = true;
@@ -548,6 +515,58 @@
             this.radioInternetUsuario.Text = "Usuario";
             this.radioInternetUsuario.UseVisualStyleBackColor = true;
             // 
+            // campoObservaciones
+            // 
+            this.campoObservaciones.Location = new System.Drawing.Point(30, 334);
+            this.campoObservaciones.Multiline = true;
+            this.campoObservaciones.Name = "campoObservaciones";
+            this.campoObservaciones.Size = new System.Drawing.Size(440, 68);
+            this.campoObservaciones.TabIndex = 6;
+            this.campoObservaciones.Tag = "OBSERVACIONES";
+            this.campoObservaciones.TextChanged += new System.EventHandler(this.campoObservaciones_TextChanged);
+            this.campoObservaciones.Enter += new System.EventHandler(this.campoObservaciones_Enter);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(27, 304);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(78, 13);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "Observaciones";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(27, 86);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(85, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Nivel informática";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(27, 36);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Estudios finalizados";
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(405, 543);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(282, 53);
+            this.btnRegistrar.TabIndex = 3;
+            this.btnRegistrar.Text = "REGISTRAR";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // selector
+            // 
+            this.selector.FileName = "openFileDialog1";
+            // 
             // AltaAdministracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,12 +590,12 @@
             this.groupPersonales.PerformLayout();
             this.groupComplementarios.ResumeLayout(false);
             this.groupComplementarios.PerformLayout();
-            this.groupInternet.ResumeLayout(false);
-            this.groupInternet.PerformLayout();
-            this.groupCalculo.ResumeLayout(false);
-            this.groupCalculo.PerformLayout();
             this.groupTextos.ResumeLayout(false);
             this.groupTextos.PerformLayout();
+            this.groupCalculo.ResumeLayout(false);
+            this.groupCalculo.PerformLayout();
+            this.groupInternet.ResumeLayout(false);
+            this.groupInternet.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -626,5 +645,6 @@
         private System.Windows.Forms.RadioButton radioTextoAvanzado;
         private System.Windows.Forms.RadioButton radioTextoMedio;
         private System.Windows.Forms.RadioButton radioTextoUsuario;
+        private System.Windows.Forms.OpenFileDialog selector;
     }
 }

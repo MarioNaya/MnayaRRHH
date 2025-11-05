@@ -315,7 +315,7 @@ namespace MnayaRRHH.bbdd
                             "observaciones, fechaAlta, registrador) " +
                             "VALUES " +
                             "(?nombre, ?apellidos, ?dni, ?fechaNacimiento, ?direccion, ?cp, ?localidad, ?telefono, ?email, ?foto, " +
-                            "?nivelEstudios, ?nivelInformaticaTexto, ?nivelInformaticaHojaCalculo, ?nivelInformaticaInternet " +
+                            "?nivelEstudios, ?nivelInformaticaTexto, ?nivelInformaticaHojaCalculo, ?nivelInformaticaInternet, " +
                             "?observaciones, ?fechaAlta, ?registrador)";
             try
             {
