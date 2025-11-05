@@ -33,51 +33,6 @@ namespace MnayaRRHH.Vistas
             RegistrarCandidato();
         }
 
-        private void campoNombre_Enter(object sender, EventArgs e)
-        {
-            campoNombre.BackColor = Color.White;
-        }
-
-        private void campoApellidos_Enter(object sender, EventArgs e)
-        {
-            campoApellidos.BackColor = Color.White;
-        }
-
-        private void campoDni_Enter(object sender, EventArgs e)
-        {
-            campoDni.BackColor = Color.White;
-        }   
-
-        private void campoDireccion_Enter(object sender, EventArgs e)
-        {
-            campoDireccion.BackColor = Color.White;
-        }
-
-        private void campoCp_Enter(object sender, EventArgs e)
-        {
-            campoCp.BackColor = Color.White;
-        }
-
-        private void campoTelefono_Enter(object sender, EventArgs e)
-        {
-            campoTelefono.BackColor = Color.White;
-        }
-
-        private void campoEmail_Enter(object sender, EventArgs e)
-        {
-            campoEmail.BackColor = Color.White;
-        }
-
-        private void campoObservaciones_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void campoObservaciones_Enter(object sender, EventArgs e)
-        {
-            campoObservaciones.BackColor = Color.White;
-        }
-
         private void btnFoto_Click(object sender, EventArgs e)
         {
             selector.Filter = ("Archivos de imagen|*.jpg;*.jpeg;*.png");
@@ -191,6 +146,17 @@ namespace MnayaRRHH.Vistas
             }
 
 
+        }
+
+        private void groupPersonales_Enter(object sender, EventArgs e)
+        {
+            Validaciones.Foco(groupPersonales);
+            Validaciones.AsignarSoloNumeros(groupPersonales);
+        }
+
+        private void groupComplementarios_Enter(object sender, EventArgs e)
+        {
+            Validaciones.Foco(groupComplementarios);
         }
     }
 }

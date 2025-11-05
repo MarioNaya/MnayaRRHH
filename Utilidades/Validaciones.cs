@@ -177,5 +177,42 @@ namespace MnayaRRHH.Utilidades
             }
             return false;
         }
+
+        public static void Foco (GroupBox grp)
+        {
+            foreach (Control c in grp.Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.Enter += delegate (object sender, EventArgs e)
+                    {
+                        c.BackColor = Color.White;
+                    };
+                }
+            }
+        }
+
+        public static void AsignarSoloNumeros(GroupBox grp)
+        {
+            foreach (Control c in grp.Controls)
+            {
+                if (c is TextBox)
+                {
+                    if (c.Tag.ToString()=="CÓDIGO POSTAL" || c.Tag.ToString() == "TELÉFONO")
+                    {
+                        c.KeyPress += delegate (object o, KeyPressEventArgs e)
+                        {
+                            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+                            {
+                                e.Handled = true;
+                                MessageBox.Show($"El campo {c.Tag} solo acepta valores numéricos","Validación de campos",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                            }
+                        };
+                    }
+                }
+            }
+        }
     }
 }

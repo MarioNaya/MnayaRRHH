@@ -132,6 +132,7 @@
             this.groupPersonales.TabStop = false;
             this.groupPersonales.Tag = "DIRECCIÓN";
             this.groupPersonales.Text = "DATOS PERSONALES";
+            this.groupPersonales.Enter += new System.EventHandler(this.groupPersonales_Enter);
             // 
             // campoNombre
             // 
@@ -140,7 +141,6 @@
             this.campoNombre.Size = new System.Drawing.Size(200, 20);
             this.campoNombre.TabIndex = 12;
             this.campoNombre.Tag = "NOMBRE";
-            this.campoNombre.Enter += new System.EventHandler(this.campoNombre_Enter);
             // 
             // campoApellidos
             // 
@@ -149,7 +149,6 @@
             this.campoApellidos.Size = new System.Drawing.Size(200, 20);
             this.campoApellidos.TabIndex = 13;
             this.campoApellidos.Tag = "APELLIDOS";
-            this.campoApellidos.Enter += new System.EventHandler(this.campoApellidos_Enter);
             // 
             // campoDni
             // 
@@ -158,7 +157,6 @@
             this.campoDni.Size = new System.Drawing.Size(112, 20);
             this.campoDni.TabIndex = 14;
             this.campoDni.Tag = "DNI";
-            this.campoDni.Enter += new System.EventHandler(this.campoDni_Enter);
             // 
             // datePickerNacimiento
             // 
@@ -175,7 +173,6 @@
             this.campoDireccion.Size = new System.Drawing.Size(321, 20);
             this.campoDireccion.TabIndex = 15;
             this.campoDireccion.Tag = "DIRECCIÓN";
-            this.campoDireccion.Enter += new System.EventHandler(this.campoDireccion_Enter);
             // 
             // campoCp
             // 
@@ -184,7 +181,6 @@
             this.campoCp.Size = new System.Drawing.Size(112, 20);
             this.campoCp.TabIndex = 16;
             this.campoCp.Tag = "CÓDIGO POSTAL";
-            this.campoCp.Enter += new System.EventHandler(this.campoCp_Enter);
             // 
             // comboLocalidad
             // 
@@ -210,7 +206,6 @@
             this.campoTelefono.Size = new System.Drawing.Size(149, 20);
             this.campoTelefono.TabIndex = 18;
             this.campoTelefono.Tag = "TELÉFONO";
-            this.campoTelefono.Enter += new System.EventHandler(this.campoTelefono_Enter);
             // 
             // campoEmail
             // 
@@ -219,7 +214,6 @@
             this.campoEmail.Size = new System.Drawing.Size(321, 20);
             this.campoEmail.TabIndex = 19;
             this.campoEmail.Tag = "EMAIL";
-            this.campoEmail.Enter += new System.EventHandler(this.campoEmail_Enter);
             // 
             // campoFoto
             // 
@@ -347,6 +341,7 @@
             this.groupComplementarios.TabIndex = 2;
             this.groupComplementarios.TabStop = false;
             this.groupComplementarios.Text = "DATOS COMPLEMENTARIOS";
+            this.groupComplementarios.Enter += new System.EventHandler(this.groupComplementarios_Enter);
             // 
             // comboEstudios
             // 
@@ -523,8 +518,6 @@
             this.campoObservaciones.Size = new System.Drawing.Size(440, 68);
             this.campoObservaciones.TabIndex = 6;
             this.campoObservaciones.Tag = "OBSERVACIONES";
-            this.campoObservaciones.TextChanged += new System.EventHandler(this.campoObservaciones_TextChanged);
-            this.campoObservaciones.Enter += new System.EventHandler(this.campoObservaciones_Enter);
             // 
             // label14
             // 
