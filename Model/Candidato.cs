@@ -32,6 +32,20 @@ namespace MnayaRRHH.Model
             this.FechaNaciemiento = fechaNaciemiento;
         }
 
+        public Candidato(string nombre, string apellidos, string direccion, string email, byte[] foto, string localidad, int cp, int tlfno, DateTime fechaAlta, DateTime fechaNaciemiento)
+        {
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.direccion = direccion;
+            this.email = email;
+            this.foto = foto;
+            this.localidad = localidad;
+            this.cp = cp;
+            this.tlfno = tlfno;
+            this.fechaAlta = fechaAlta;
+            this.fechaNaciemiento = fechaNaciemiento;
+        }
+
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
         public string Dni { get => dni; set => dni = value; }

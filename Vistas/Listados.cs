@@ -47,7 +47,14 @@ namespace MnayaRRHH.Vistas
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ExportarXls();
+            if (tablaCandidatos.DataSource != null)
+            {
+                ExportarXls();
+            }
+            else
+            {
+                MessageBox.Show("No hay datos para exportar.", "Error de exportación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void btnAlmacen_Click(object sender, EventArgs e)
         {
@@ -58,6 +65,7 @@ namespace MnayaRRHH.Vistas
         {
             if (comboTipo.SelectedIndex != 0)
             {
+                tablaCandidatos.DataSource = null;
                 string indice = comboTipo.SelectedItem.ToString();
                 Validaciones.ResetearFormulario(groupAdmin);
                 Validaciones.ResetearFormulario(groupAlmacen);
@@ -69,6 +77,7 @@ namespace MnayaRRHH.Vistas
                 {
                     case "Almacén":
                         groupAlmacen.Enabled = true;
+                        this.ActiveControl = radioAlmacenTodos;
                         groupAdmin.Enabled = false;
                         break;
                     case "Administración":
@@ -83,6 +92,7 @@ namespace MnayaRRHH.Vistas
             }
             else
             {
+                tablaCandidatos.DataSource = null;
                 groupAdmin.Enabled = false;
                 groupAlmacen.Enabled = false;
                 Validaciones.ResetearFormulario(groupAdmin);
@@ -112,13 +122,26 @@ namespace MnayaRRHH.Vistas
         public string ConstruccionCondicionAlmacen()
         {
             string condicion = "";
-            if (comboAlmacenEstudios.SelectedIndex != 0)
+            if (radioAlmacenTodos.Checked)
             {
-                condicion += $" AND nivelEstudios = '{Validaciones.RecuperarValorCombo(comboAlmacenEstudios)}'";
+                if (comboAlmacenEstudios.SelectedIndex != 0)
+                {
+                    condicion += $" AND nivelEstudios = '{Validaciones.RecuperarValorCombo(comboAlmacenEstudios)}'";
+                }
+            } 
+            else if (radioAlmacenFiltrar.Checked)
+            {
+                if (comboAlmacenEstudios.SelectedIndex != 0)
+                {
+                    condicion += $" AND nivelEstudios = '{Validaciones.RecuperarValorCombo(comboAlmacenEstudios)}'";
+                }
+
+                string [] valoresCheck = Validaciones.RecuperarValoresCheck(groupCarnets);
+                condicion += $" AND carnetConducir = '{valoresCheck[0]}'";
+                condicion += $" AND carnetCarretilla = '{valoresCheck[1]}'";
+                condicion += $" AND carnetCamion = '{valoresCheck[2]}'";
             }
-            condicion += $" AND carnetConducir = '{Validaciones.RecuperarValoresCheck(groupCarnets)[0]}'";
-            condicion += $" AND carnetCarretilla = '{Validaciones.RecuperarValoresCheck(groupCarnets)[1]}'";
-            condicion += $" AND carnetCamion = '{Validaciones.RecuperarValoresCheck(groupCarnets)[2]}'";
+            
             return condicion;
         }
 

@@ -439,6 +439,7 @@
             // 
             // comboTipo
             // 
+            this.comboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTipo.FormattingEnabled = true;
             this.comboTipo.Items.AddRange(new object[] {
             "Seleccione",
@@ -452,8 +453,12 @@
             // 
             // tablaCandidatos
             // 
+            this.tablaCandidatos.AllowUserToAddRows = false;
+            this.tablaCandidatos.AllowUserToDeleteRows = false;
+            this.tablaCandidatos.AllowUserToResizeColumns = false;
             this.tablaCandidatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaCandidatos.BackgroundColor = System.Drawing.Color.White;
+            this.tablaCandidatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
@@ -469,11 +474,12 @@
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaCandidatos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaCandidatos.GridColor = System.Drawing.Color.White;
+            this.tablaCandidatos.GridColor = System.Drawing.SystemColors.Control;
             this.tablaCandidatos.Location = new System.Drawing.Point(51, 398);
             this.tablaCandidatos.Name = "tablaCandidatos";
+            this.tablaCandidatos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.tablaCandidatos.RowHeadersVisible = false;
             this.tablaCandidatos.Size = new System.Drawing.Size(978, 228);
             this.tablaCandidatos.TabIndex = 4;
@@ -493,6 +499,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1084, 661);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tablaCandidatos);

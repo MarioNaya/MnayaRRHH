@@ -99,7 +99,8 @@ namespace MnayaRRHH.bbdd
                         }
                     }
                 }
-            } catch (MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -310,7 +311,7 @@ namespace MnayaRRHH.bbdd
         public static bool RegistrarCandidatoAdmin(CandidatoAdministracion candidato)
         {
             string consulta = "INSERT INTO candidatoadministracion " +
-                            "(nombre, apellidos, dni, fechaNacimiento, direccion, cp, localidad, telefono, email, "+
+                            "(nombre, apellidos, dni, fechaNacimiento, direccion, cp, localidad, telefono, email, " +
                             "foto, nivelEstudios, nivelInformaticaTexto, nivelInformaticaHojaCalculo, nivelInformaticaInternet, " +
                             "observaciones, fechaAlta, registrador) " +
                             "VALUES " +
@@ -436,7 +437,7 @@ namespace MnayaRRHH.bbdd
                             dr["TRAT. TEXTO"] = reader.GetString(6);
                             dr["HOJA CALCULO"] = reader.GetString(7);
                             dr["INTERNET"] = reader.GetString(8);
-                            
+
                             dt.Rows.Add(dr);
                         }
                     }
@@ -491,6 +492,67 @@ namespace MnayaRRHH.bbdd
             }
 
             return dt;
+        }
+
+        public static Candidato RescatarDatosCandidato(string dni, string tabla)
+        {
+            string consulta = "SELECT nombre, apellidos, fechaNacimiento, direccion, cp, localidad, telefono, email, foto, fechaAlta " +
+                $"FROM {tabla} WHERE dni = ?dni";
+
+            using (MySqlConnection conn = new MySqlConnection(url))
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(consulta, conn))
+                {
+                    cmd.Parameters.AddWithValue("?tabla", tabla);
+                    cmd.Parameters.AddWithValue("?dni", dni);
+
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            Candidato c = new Candidato(
+                                dr["nombre"].ToString(),
+                                dr["apellidos"].ToString(),
+                                dr["direccion"].ToString(),
+                                dr["email"].ToString(),
+                                (byte[])dr["foto"],
+                                dr["localidad"].ToString(),
+                                Convert.ToInt32(dr["cp"]),
+                                Convert.ToInt32(dr["telefono"]),
+                                Convert.ToDateTime(dr["fechaAlta"]),
+                                Convert.ToDateTime(dr["fechaNacimiento"])
+                                );
+                            return c;
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+        }
+
+        public static bool EliminarCandidato(string dni, string tabla)
+        {
+
+            string consulta = $"DELETE FROM {tabla} WHERE dni = ?dni";
+
+
+            using (MySqlConnection conn = new MySqlConnection(url))
+            {
+                conn.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(consulta, conn))
+                {
+                    cmd.Parameters.AddWithValue("?dni", dni);
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    return filasAfectadas > 0;
+                }
+            }
         }
     }
 }
