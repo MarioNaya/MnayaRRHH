@@ -28,33 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Listados));
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboTipo = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.groupAdmin = new System.Windows.Forms.GroupBox();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.groupInternet = new System.Windows.Forms.GroupBox();
+            this.radioInternetAvanzado = new System.Windows.Forms.RadioButton();
+            this.radioInternetMedio = new System.Windows.Forms.RadioButton();
+            this.radioInternetUsuario = new System.Windows.Forms.RadioButton();
+            this.radioInternetTodos = new System.Windows.Forms.RadioButton();
+            this.groupCalculo = new System.Windows.Forms.GroupBox();
+            this.radioCalculoAvanzado = new System.Windows.Forms.RadioButton();
+            this.radioCalculoMedio = new System.Windows.Forms.RadioButton();
+            this.radioCalculoUsuario = new System.Windows.Forms.RadioButton();
+            this.radioCalculoTodos = new System.Windows.Forms.RadioButton();
+            this.GroupTextos = new System.Windows.Forms.GroupBox();
+            this.radioTextosAvanzado = new System.Windows.Forms.RadioButton();
+            this.radioTextosMedio = new System.Windows.Forms.RadioButton();
+            this.radioTextosUsuario = new System.Windows.Forms.RadioButton();
+            this.radioTextosTodos = new System.Windows.Forms.RadioButton();
             this.comboAdminEstudios = new System.Windows.Forms.ComboBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupAlmacen = new System.Windows.Forms.GroupBox();
+            this.comboTipo = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboAlmacenEstudios = new System.Windows.Forms.ComboBox();
+            this.groupCarnets = new System.Windows.Forms.GroupBox();
+            this.groupFiltroAlmacen = new System.Windows.Forms.Panel();
+            this.radioButton13 = new System.Windows.Forms.RadioButton();
+            this.radioButton14 = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.btnAlmacen = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupAdmin.SuspendLayout();
+            this.groupInternet.SuspendLayout();
+            this.groupCalculo.SuspendLayout();
+            this.GroupTextos.SuspendLayout();
+            this.groupAlmacen.SuspendLayout();
+            this.groupCarnets.SuspendLayout();
+            this.groupFiltroAlmacen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,37 +83,211 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de candidatos";
             // 
-            // groupBox1
+            // groupAdmin
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.comboAdminEstudios);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(51, 79);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(452, 266);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "º";
+            this.groupAdmin.Controls.Add(this.btnAdmin);
+            this.groupAdmin.Controls.Add(this.groupInternet);
+            this.groupAdmin.Controls.Add(this.groupCalculo);
+            this.groupAdmin.Controls.Add(this.GroupTextos);
+            this.groupAdmin.Controls.Add(this.comboAdminEstudios);
+            this.groupAdmin.Controls.Add(this.label2);
+            this.groupAdmin.Location = new System.Drawing.Point(51, 79);
+            this.groupAdmin.Name = "groupAdmin";
+            this.groupAdmin.Size = new System.Drawing.Size(452, 266);
+            this.groupAdmin.TabIndex = 1;
+            this.groupAdmin.TabStop = false;
+            this.groupAdmin.Text = "Filtros Administración";
             // 
-            // groupBox2
+            // btnAdmin
             // 
-            this.groupBox2.Location = new System.Drawing.Point(577, 79);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(452, 266);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.btnAdmin.Location = new System.Drawing.Point(156, 225);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(120, 23);
+            this.btnAdmin.TabIndex = 5;
+            this.btnAdmin.Text = "Mostrar listado";
+            this.btnAdmin.UseVisualStyleBackColor = true;
             // 
-            // comboTipo
+            // groupInternet
             // 
-            this.comboTipo.FormattingEnabled = true;
-            this.comboTipo.Location = new System.Drawing.Point(165, 36);
-            this.comboTipo.Name = "comboTipo";
-            this.comboTipo.Size = new System.Drawing.Size(162, 21);
-            this.comboTipo.TabIndex = 3;
+            this.groupInternet.Controls.Add(this.radioInternetAvanzado);
+            this.groupInternet.Controls.Add(this.radioInternetMedio);
+            this.groupInternet.Controls.Add(this.radioInternetUsuario);
+            this.groupInternet.Controls.Add(this.radioInternetTodos);
+            this.groupInternet.ForeColor = System.Drawing.Color.Firebrick;
+            this.groupInternet.Location = new System.Drawing.Point(30, 164);
+            this.groupInternet.Name = "groupInternet";
+            this.groupInternet.Size = new System.Drawing.Size(384, 44);
+            this.groupInternet.TabIndex = 4;
+            this.groupInternet.TabStop = false;
+            this.groupInternet.Text = "Internet";
+            // 
+            // radioInternetAvanzado
+            // 
+            this.radioInternetAvanzado.AutoSize = true;
+            this.radioInternetAvanzado.Location = new System.Drawing.Point(281, 19);
+            this.radioInternetAvanzado.Name = "radioInternetAvanzado";
+            this.radioInternetAvanzado.Size = new System.Drawing.Size(73, 17);
+            this.radioInternetAvanzado.TabIndex = 3;
+            this.radioInternetAvanzado.TabStop = true;
+            this.radioInternetAvanzado.Text = "Avanzado";
+            this.radioInternetAvanzado.UseVisualStyleBackColor = true;
+            // 
+            // radioInternetMedio
+            // 
+            this.radioInternetMedio.AutoSize = true;
+            this.radioInternetMedio.Location = new System.Drawing.Point(203, 19);
+            this.radioInternetMedio.Name = "radioInternetMedio";
+            this.radioInternetMedio.Size = new System.Drawing.Size(54, 17);
+            this.radioInternetMedio.TabIndex = 2;
+            this.radioInternetMedio.TabStop = true;
+            this.radioInternetMedio.Text = "Medio";
+            this.radioInternetMedio.UseVisualStyleBackColor = true;
+            // 
+            // radioInternetUsuario
+            // 
+            this.radioInternetUsuario.AutoSize = true;
+            this.radioInternetUsuario.Location = new System.Drawing.Point(116, 19);
+            this.radioInternetUsuario.Name = "radioInternetUsuario";
+            this.radioInternetUsuario.Size = new System.Drawing.Size(61, 17);
+            this.radioInternetUsuario.TabIndex = 1;
+            this.radioInternetUsuario.TabStop = true;
+            this.radioInternetUsuario.Text = "Usuario";
+            this.radioInternetUsuario.UseVisualStyleBackColor = true;
+            // 
+            // radioInternetTodos
+            // 
+            this.radioInternetTodos.AutoSize = true;
+            this.radioInternetTodos.Location = new System.Drawing.Point(41, 19);
+            this.radioInternetTodos.Name = "radioInternetTodos";
+            this.radioInternetTodos.Size = new System.Drawing.Size(55, 17);
+            this.radioInternetTodos.TabIndex = 0;
+            this.radioInternetTodos.TabStop = true;
+            this.radioInternetTodos.Text = "Todos";
+            this.radioInternetTodos.UseVisualStyleBackColor = true;
+            // 
+            // groupCalculo
+            // 
+            this.groupCalculo.Controls.Add(this.radioCalculoAvanzado);
+            this.groupCalculo.Controls.Add(this.radioCalculoMedio);
+            this.groupCalculo.Controls.Add(this.radioCalculoUsuario);
+            this.groupCalculo.Controls.Add(this.radioCalculoTodos);
+            this.groupCalculo.ForeColor = System.Drawing.Color.Firebrick;
+            this.groupCalculo.Location = new System.Drawing.Point(30, 114);
+            this.groupCalculo.Name = "groupCalculo";
+            this.groupCalculo.Size = new System.Drawing.Size(384, 44);
+            this.groupCalculo.TabIndex = 3;
+            this.groupCalculo.TabStop = false;
+            this.groupCalculo.Text = "Hoja de cálculo";
+            // 
+            // radioCalculoAvanzado
+            // 
+            this.radioCalculoAvanzado.AutoSize = true;
+            this.radioCalculoAvanzado.Location = new System.Drawing.Point(281, 19);
+            this.radioCalculoAvanzado.Name = "radioCalculoAvanzado";
+            this.radioCalculoAvanzado.Size = new System.Drawing.Size(73, 17);
+            this.radioCalculoAvanzado.TabIndex = 3;
+            this.radioCalculoAvanzado.TabStop = true;
+            this.radioCalculoAvanzado.Text = "Avanzado";
+            this.radioCalculoAvanzado.UseVisualStyleBackColor = true;
+            // 
+            // radioCalculoMedio
+            // 
+            this.radioCalculoMedio.AutoSize = true;
+            this.radioCalculoMedio.Location = new System.Drawing.Point(203, 19);
+            this.radioCalculoMedio.Name = "radioCalculoMedio";
+            this.radioCalculoMedio.Size = new System.Drawing.Size(54, 17);
+            this.radioCalculoMedio.TabIndex = 2;
+            this.radioCalculoMedio.TabStop = true;
+            this.radioCalculoMedio.Text = "Medio";
+            this.radioCalculoMedio.UseVisualStyleBackColor = true;
+            // 
+            // radioCalculoUsuario
+            // 
+            this.radioCalculoUsuario.AutoSize = true;
+            this.radioCalculoUsuario.Location = new System.Drawing.Point(116, 19);
+            this.radioCalculoUsuario.Name = "radioCalculoUsuario";
+            this.radioCalculoUsuario.Size = new System.Drawing.Size(61, 17);
+            this.radioCalculoUsuario.TabIndex = 1;
+            this.radioCalculoUsuario.TabStop = true;
+            this.radioCalculoUsuario.Text = "Usuario";
+            this.radioCalculoUsuario.UseVisualStyleBackColor = true;
+            // 
+            // radioCalculoTodos
+            // 
+            this.radioCalculoTodos.AutoSize = true;
+            this.radioCalculoTodos.Location = new System.Drawing.Point(41, 19);
+            this.radioCalculoTodos.Name = "radioCalculoTodos";
+            this.radioCalculoTodos.Size = new System.Drawing.Size(55, 17);
+            this.radioCalculoTodos.TabIndex = 0;
+            this.radioCalculoTodos.TabStop = true;
+            this.radioCalculoTodos.Text = "Todos";
+            this.radioCalculoTodos.UseVisualStyleBackColor = true;
+            // 
+            // GroupTextos
+            // 
+            this.GroupTextos.Controls.Add(this.radioTextosAvanzado);
+            this.GroupTextos.Controls.Add(this.radioTextosMedio);
+            this.GroupTextos.Controls.Add(this.radioTextosUsuario);
+            this.GroupTextos.Controls.Add(this.radioTextosTodos);
+            this.GroupTextos.ForeColor = System.Drawing.Color.Firebrick;
+            this.GroupTextos.Location = new System.Drawing.Point(30, 64);
+            this.GroupTextos.Name = "GroupTextos";
+            this.GroupTextos.Size = new System.Drawing.Size(384, 44);
+            this.GroupTextos.TabIndex = 2;
+            this.GroupTextos.TabStop = false;
+            this.GroupTextos.Text = "Tratamiento de textos";
+            // 
+            // radioTextosAvanzado
+            // 
+            this.radioTextosAvanzado.AutoSize = true;
+            this.radioTextosAvanzado.Location = new System.Drawing.Point(281, 19);
+            this.radioTextosAvanzado.Name = "radioTextosAvanzado";
+            this.radioTextosAvanzado.Size = new System.Drawing.Size(73, 17);
+            this.radioTextosAvanzado.TabIndex = 3;
+            this.radioTextosAvanzado.TabStop = true;
+            this.radioTextosAvanzado.Text = "Avanzado";
+            this.radioTextosAvanzado.UseVisualStyleBackColor = true;
+            // 
+            // radioTextosMedio
+            // 
+            this.radioTextosMedio.AutoSize = true;
+            this.radioTextosMedio.Location = new System.Drawing.Point(203, 19);
+            this.radioTextosMedio.Name = "radioTextosMedio";
+            this.radioTextosMedio.Size = new System.Drawing.Size(54, 17);
+            this.radioTextosMedio.TabIndex = 2;
+            this.radioTextosMedio.TabStop = true;
+            this.radioTextosMedio.Text = "Medio";
+            this.radioTextosMedio.UseVisualStyleBackColor = true;
+            // 
+            // radioTextosUsuario
+            // 
+            this.radioTextosUsuario.AutoSize = true;
+            this.radioTextosUsuario.Location = new System.Drawing.Point(116, 19);
+            this.radioTextosUsuario.Name = "radioTextosUsuario";
+            this.radioTextosUsuario.Size = new System.Drawing.Size(61, 17);
+            this.radioTextosUsuario.TabIndex = 1;
+            this.radioTextosUsuario.TabStop = true;
+            this.radioTextosUsuario.Text = "Usuario";
+            this.radioTextosUsuario.UseVisualStyleBackColor = true;
+            // 
+            // radioTextosTodos
+            // 
+            this.radioTextosTodos.AutoSize = true;
+            this.radioTextosTodos.Location = new System.Drawing.Point(41, 19);
+            this.radioTextosTodos.Name = "radioTextosTodos";
+            this.radioTextosTodos.Size = new System.Drawing.Size(55, 17);
+            this.radioTextosTodos.TabIndex = 0;
+            this.radioTextosTodos.TabStop = true;
+            this.radioTextosTodos.Text = "Todos";
+            this.radioTextosTodos.UseVisualStyleBackColor = true;
+            // 
+            // comboAdminEstudios
+            // 
+            this.comboAdminEstudios.FormattingEnabled = true;
+            this.comboAdminEstudios.Location = new System.Drawing.Point(156, 28);
+            this.comboAdminEstudios.Name = "comboAdminEstudios";
+            this.comboAdminEstudios.Size = new System.Drawing.Size(210, 21);
+            this.comboAdminEstudios.TabIndex = 1;
             // 
             // label2
             // 
@@ -107,205 +298,162 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Estudios finalizados";
             // 
-            // comboAdminEstudios
+            // groupAlmacen
             // 
-            this.comboAdminEstudios.FormattingEnabled = true;
-            this.comboAdminEstudios.Location = new System.Drawing.Point(156, 28);
-            this.comboAdminEstudios.Name = "comboAdminEstudios";
-            this.comboAdminEstudios.Size = new System.Drawing.Size(210, 21);
-            this.comboAdminEstudios.TabIndex = 1;
+            this.groupAlmacen.Controls.Add(this.btnAlmacen);
+            this.groupAlmacen.Controls.Add(this.groupFiltroAlmacen);
+            this.groupAlmacen.Controls.Add(this.groupCarnets);
+            this.groupAlmacen.Controls.Add(this.comboAlmacenEstudios);
+            this.groupAlmacen.Controls.Add(this.label3);
+            this.groupAlmacen.Location = new System.Drawing.Point(577, 79);
+            this.groupAlmacen.Name = "groupAlmacen";
+            this.groupAlmacen.Size = new System.Drawing.Size(452, 266);
+            this.groupAlmacen.TabIndex = 2;
+            this.groupAlmacen.TabStop = false;
+            this.groupAlmacen.Text = "Filtros almacén";
             // 
-            // groupBox3
+            // comboTipo
             // 
-            this.groupBox3.Controls.Add(this.radioButton4);
-            this.groupBox3.Controls.Add(this.radioButton3);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupBox3.Location = new System.Drawing.Point(30, 64);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(384, 44);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tratamiento de textos";
+            this.comboTipo.FormattingEnabled = true;
+            this.comboTipo.Location = new System.Drawing.Point(165, 36);
+            this.comboTipo.Name = "comboTipo";
+            this.comboTipo.Size = new System.Drawing.Size(162, 21);
+            this.comboTipo.TabIndex = 3;
             // 
-            // radioButton1
+            // label3
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(41, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(55, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Todos";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(33, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Estudios finalizados";
             // 
-            // radioButton2
+            // comboAlmacenEstudios
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(116, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(61, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Usuario";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.comboAlmacenEstudios.FormattingEnabled = true;
+            this.comboAlmacenEstudios.Location = new System.Drawing.Point(165, 28);
+            this.comboAlmacenEstudios.Name = "comboAlmacenEstudios";
+            this.comboAlmacenEstudios.Size = new System.Drawing.Size(210, 21);
+            this.comboAlmacenEstudios.TabIndex = 2;
             // 
-            // radioButton3
+            // groupCarnets
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(203, 19);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(54, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Medio";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.groupCarnets.Controls.Add(this.checkBox3);
+            this.groupCarnets.Controls.Add(this.checkBox2);
+            this.groupCarnets.Controls.Add(this.checkBox1);
+            this.groupCarnets.ForeColor = System.Drawing.Color.Firebrick;
+            this.groupCarnets.Location = new System.Drawing.Point(36, 123);
+            this.groupCarnets.Name = "groupCarnets";
+            this.groupCarnets.Size = new System.Drawing.Size(365, 67);
+            this.groupCarnets.TabIndex = 3;
+            this.groupCarnets.TabStop = false;
+            this.groupCarnets.Text = "CARNETS";
             // 
-            // radioButton4
+            // groupFiltroAlmacen
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(281, 19);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(73, 17);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Avanzado";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.groupFiltroAlmacen.Controls.Add(this.radioButton14);
+            this.groupFiltroAlmacen.Controls.Add(this.radioButton13);
+            this.groupFiltroAlmacen.Location = new System.Drawing.Point(36, 73);
+            this.groupFiltroAlmacen.Name = "groupFiltroAlmacen";
+            this.groupFiltroAlmacen.Size = new System.Drawing.Size(252, 42);
+            this.groupFiltroAlmacen.TabIndex = 4;
             // 
-            // groupBox4
+            // radioButton13
             // 
-            this.groupBox4.Controls.Add(this.radioButton5);
-            this.groupBox4.Controls.Add(this.radioButton6);
-            this.groupBox4.Controls.Add(this.radioButton7);
-            this.groupBox4.Controls.Add(this.radioButton8);
-            this.groupBox4.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupBox4.Location = new System.Drawing.Point(30, 114);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(384, 44);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Hoja de cálculo";
+            this.radioButton13.AutoSize = true;
+            this.radioButton13.Location = new System.Drawing.Point(13, 14);
+            this.radioButton13.Name = "radioButton13";
+            this.radioButton13.Size = new System.Drawing.Size(55, 17);
+            this.radioButton13.TabIndex = 0;
+            this.radioButton13.TabStop = true;
+            this.radioButton13.Text = "Todos";
+            this.radioButton13.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // radioButton14
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(281, 19);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(73, 17);
-            this.radioButton5.TabIndex = 3;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Avanzado";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton14.AutoSize = true;
+            this.radioButton14.Location = new System.Drawing.Point(123, 14);
+            this.radioButton14.Name = "radioButton14";
+            this.radioButton14.Size = new System.Drawing.Size(50, 17);
+            this.radioButton14.TabIndex = 0;
+            this.radioButton14.TabStop = true;
+            this.radioButton14.Text = "Filtrar";
+            this.radioButton14.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // checkBox1
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(203, 19);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(54, 17);
-            this.radioButton6.TabIndex = 2;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Medio";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(13, 31);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(116, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Carnet de conducir";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // radioButton7
+            // checkBox2
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(116, 19);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(61, 17);
-            this.radioButton7.TabIndex = 1;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Usuario";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(135, 31);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(114, 17);
+            this.checkBox2.TabIndex = 0;
+            this.checkBox2.Text = "Carnet de carretilla";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // radioButton8
+            // checkBox3
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(41, 19);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(55, 17);
-            this.radioButton8.TabIndex = 0;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Todos";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(259, 31);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(110, 17);
+            this.checkBox3.TabIndex = 0;
+            this.checkBox3.Text = "Carnet de Camión";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // groupBox5
+            // btnAlmacen
             // 
-            this.groupBox5.Controls.Add(this.radioButton9);
-            this.groupBox5.Controls.Add(this.radioButton10);
-            this.groupBox5.Controls.Add(this.radioButton11);
-            this.groupBox5.Controls.Add(this.radioButton12);
-            this.groupBox5.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupBox5.Location = new System.Drawing.Point(30, 164);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(384, 44);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Internet";
+            this.btnAlmacen.Location = new System.Drawing.Point(165, 225);
+            this.btnAlmacen.Name = "btnAlmacen";
+            this.btnAlmacen.Size = new System.Drawing.Size(120, 23);
+            this.btnAlmacen.TabIndex = 6;
+            this.btnAlmacen.Text = "Mostrar listado";
+            this.btnAlmacen.UseVisualStyleBackColor = true;
             // 
-            // radioButton9
+            // dataGridView1
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(281, 19);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(73, 17);
-            this.radioButton9.TabIndex = 3;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Avanzado";
-            this.radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // radioButton10
-            // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(203, 19);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(54, 17);
-            this.radioButton10.TabIndex = 2;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Medio";
-            this.radioButton10.UseVisualStyleBackColor = true;
-            // 
-            // radioButton11
-            // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(116, 19);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(61, 17);
-            this.radioButton11.TabIndex = 1;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Usuario";
-            this.radioButton11.UseVisualStyleBackColor = true;
-            // 
-            // radioButton12
-            // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(41, 19);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(55, 17);
-            this.radioButton12.TabIndex = 0;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "Todos";
-            this.radioButton12.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(156, 225);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Mostrar listado";
-            this.button1.UseVisualStyleBackColor = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(51, 398);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(978, 228);
+            this.dataGridView1.TabIndex = 4;
             // 
             // Listados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 661);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboTipo);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupAlmacen);
+            this.Controls.Add(this.groupAdmin);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -314,14 +462,21 @@
             this.Name = "Listados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listados";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.groupAdmin.ResumeLayout(false);
+            this.groupAdmin.PerformLayout();
+            this.groupInternet.ResumeLayout(false);
+            this.groupInternet.PerformLayout();
+            this.groupCalculo.ResumeLayout(false);
+            this.groupCalculo.PerformLayout();
+            this.GroupTextos.ResumeLayout(false);
+            this.GroupTextos.PerformLayout();
+            this.groupAlmacen.ResumeLayout(false);
+            this.groupAlmacen.PerformLayout();
+            this.groupCarnets.ResumeLayout(false);
+            this.groupCarnets.PerformLayout();
+            this.groupFiltroAlmacen.ResumeLayout(false);
+            this.groupFiltroAlmacen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,26 +485,37 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupAdmin;
         private System.Windows.Forms.ComboBox comboAdminEstudios;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupAlmacen;
         private System.Windows.Forms.ComboBox comboTipo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton12;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.GroupBox groupInternet;
+        private System.Windows.Forms.RadioButton radioInternetAvanzado;
+        private System.Windows.Forms.RadioButton radioInternetMedio;
+        private System.Windows.Forms.RadioButton radioInternetUsuario;
+        private System.Windows.Forms.RadioButton radioInternetTodos;
+        private System.Windows.Forms.GroupBox groupCalculo;
+        private System.Windows.Forms.RadioButton radioCalculoAvanzado;
+        private System.Windows.Forms.RadioButton radioCalculoMedio;
+        private System.Windows.Forms.RadioButton radioCalculoUsuario;
+        private System.Windows.Forms.RadioButton radioCalculoTodos;
+        private System.Windows.Forms.GroupBox GroupTextos;
+        private System.Windows.Forms.RadioButton radioTextosAvanzado;
+        private System.Windows.Forms.RadioButton radioTextosMedio;
+        private System.Windows.Forms.RadioButton radioTextosUsuario;
+        private System.Windows.Forms.RadioButton radioTextosTodos;
+        private System.Windows.Forms.Panel groupFiltroAlmacen;
+        private System.Windows.Forms.GroupBox groupCarnets;
+        private System.Windows.Forms.ComboBox comboAlmacenEstudios;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton radioButton14;
+        private System.Windows.Forms.RadioButton radioButton13;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnAlmacen;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
