@@ -398,5 +398,99 @@ namespace MnayaRRHH.bbdd
                 return false;
             }
         }
+
+        public static DataTable VerCandidatosAdministracion(string condicion)
+        {
+            DataTable dt = new DataTable();
+            DataRow dr;
+
+            dt.Columns.Add("NOMBRE");
+            dt.Columns.Add("APELLIDOS");
+            dt.Columns.Add("DNI");
+            dt.Columns.Add("TELEFONO");
+            dt.Columns.Add("EMAIL");
+            dt.Columns.Add("ESTUDIOS");
+            dt.Columns.Add("TRAT. TEXTO");
+            dt.Columns.Add("HOJA CALCULO");
+            dt.Columns.Add("INTERNET");
+
+            string consulta = $"SELECT nombre, apellidos, dni, telefono, email, nivelEstudios, nivelInformaticaTexto, " +
+                $"nivelInformaticaHojaCalculo, nivelInformaticaInternet  FROM candidatoadministracion WHERE 1{condicion}";
+
+            using (MySqlConnection conn = new MySqlConnection(url))
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(consulta, conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            dr = dt.NewRow();
+                            dr["NOMBRE"] = reader.GetString(0);
+                            dr["APELLIDOS"] = reader.GetString(1);
+                            dr["DNI"] = reader.GetString(2);
+                            dr["TELEFONO"] = reader.GetInt32(3);
+                            dr["EMAIL"] = reader.GetString(4);
+                            dr["ESTUDIOS"] = reader.GetString(5);
+                            dr["TRAT. TEXTO"] = reader.GetString(6);
+                            dr["HOJA CALCULO"] = reader.GetString(7);
+                            dr["INTERNET"] = reader.GetString(8);
+                            
+                            dt.Rows.Add(dr);
+                        }
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+        public static DataTable VerCandidatosAlmacen(string condicion)
+        {
+            DataTable dt = new DataTable();
+            DataRow dr;
+
+            dt.Columns.Add("NOMBRE");
+            dt.Columns.Add("APELLIDOS");
+            dt.Columns.Add("DNI");
+            dt.Columns.Add("TELEFONO");
+            dt.Columns.Add("EMAIL");
+            dt.Columns.Add("ESTUDIOS");
+            dt.Columns.Add("CARNET CONDUCIR");
+            dt.Columns.Add("CARNET CARRETILLA");
+            dt.Columns.Add("CARNET CAMION");
+
+            string consulta = $"SELECT nombre, apellidos, dni, telefono, email, nivelEstudios, carnetConducir, " +
+                $"carnetCarretilla, carnetCamion  FROM candidatoalmacen WHERE 1{condicion}";
+
+            using (MySqlConnection conn = new MySqlConnection(url))
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(consulta, conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            dr = dt.NewRow();
+                            dr["NOMBRE"] = reader.GetString(0);
+                            dr["APELLIDOS"] = reader.GetString(1);
+                            dr["DNI"] = reader.GetString(2);
+                            dr["TELEFONO"] = reader.GetInt32(3);
+                            dr["EMAIL"] = reader.GetString(4);
+                            dr["ESTUDIOS"] = reader.GetString(5);
+                            dr["CARNET CONDUCIR"] = reader.GetString(6);
+                            dr["CARNET CARRETILLA"] = reader.GetString(7);
+                            dr["CARNET CAMION"] = reader.GetString(8);
+
+                            dt.Rows.Add(dr);
+                        }
+                    }
+                }
+            }
+
+            return dt;
+        }
     }
 }

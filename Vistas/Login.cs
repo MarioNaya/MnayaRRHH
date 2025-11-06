@@ -29,13 +29,11 @@ namespace MnayaRRHH
         private void campoUser_Enter(object sender, EventArgs e)
         {
             pictureUser.Visible = true;
-            campoUser.BackColor = Color.White;
         }
 
         private void campoPass_Enter(object sender, EventArgs e)
         {
             picturePass.Visible = true;
-            campoPass.BackColor = Color.White;
         }
 
         private void campoPass_Leave(object sender, EventArgs e)
@@ -48,19 +46,14 @@ namespace MnayaRRHH
             pictureUser.Visible = false;
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             Entrar();
         }
 
-        private void campoUser_TextChanged(object sender, EventArgs e)
+        private void groupLogin_Enter(object sender, EventArgs e)
         {
-
+            Validaciones.ResetearFormulario(groupLogin);
         }
 
         /// <summary>

@@ -222,6 +222,7 @@
             this.tablaAlmacen.AllowUserToDeleteRows = false;
             this.tablaAlmacen.AllowUserToResizeColumns = false;
             this.tablaAlmacen.AllowUserToResizeRows = false;
+            this.tablaAlmacen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaAlmacen.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -257,6 +258,7 @@
             this.tablaAdmin.AllowUserToDeleteRows = false;
             this.tablaAdmin.AllowUserToResizeColumns = false;
             this.tablaAdmin.AllowUserToResizeRows = false;
+            this.tablaAdmin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaAdmin.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;

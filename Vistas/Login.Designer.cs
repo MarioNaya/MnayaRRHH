@@ -82,6 +82,7 @@
             this.groupLogin.TabIndex = 2;
             this.groupLogin.TabStop = false;
             this.groupLogin.Text = "ACCEDER";
+            this.groupLogin.Enter += new System.EventHandler(this.groupLogin_Enter);
             // 
             // btnEntrar
             // 
@@ -122,7 +123,6 @@
             this.campoUser.Size = new System.Drawing.Size(100, 20);
             this.campoUser.TabIndex = 2;
             this.campoUser.Tag = "USUARIO";
-            this.campoUser.TextChanged += new System.EventHandler(this.campoUser_TextChanged);
             this.campoUser.Enter += new System.EventHandler(this.campoUser_Enter);
             this.campoUser.Leave += new System.EventHandler(this.campoUser_Leave);
             // 
@@ -171,7 +171,6 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN";
-            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupLogin.ResumeLayout(false);

@@ -133,6 +133,16 @@ namespace MnayaRRHH.Utilidades
             return string.Empty;
         }
 
+        public static string RecuperarValorCombo(ComboBox combo)
+        {
+            if (combo.SelectedIndex != 0)
+            {
+                string resultado = combo.SelectedItem.ToString();
+                return resultado;
+            }
+            return "";
+        }
+
         public static void ResetearFormulario(GroupBox grp)
         {
             foreach (Control c in grp.Controls)

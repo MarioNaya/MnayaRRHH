@@ -44,7 +44,7 @@
             this.radioCalculoMedio = new System.Windows.Forms.RadioButton();
             this.radioCalculoUsuario = new System.Windows.Forms.RadioButton();
             this.radioCalculoTodos = new System.Windows.Forms.RadioButton();
-            this.GroupTextos = new System.Windows.Forms.GroupBox();
+            this.groupTextos = new System.Windows.Forms.GroupBox();
             this.radioTextosAvanzado = new System.Windows.Forms.RadioButton();
             this.radioTextosMedio = new System.Windows.Forms.RadioButton();
             this.radioTextosUsuario = new System.Windows.Forms.RadioButton();
@@ -52,26 +52,28 @@
             this.comboAdminEstudios = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupAlmacen = new System.Windows.Forms.GroupBox();
-            this.comboTipo = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboAlmacenEstudios = new System.Windows.Forms.ComboBox();
-            this.groupCarnets = new System.Windows.Forms.GroupBox();
-            this.groupFiltroAlmacen = new System.Windows.Forms.Panel();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.btnAlmacen = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupFiltroAlmacen = new System.Windows.Forms.Panel();
+            this.radioAlmacenFiltrar = new System.Windows.Forms.RadioButton();
+            this.radioAlmacenTodos = new System.Windows.Forms.RadioButton();
+            this.groupCarnets = new System.Windows.Forms.GroupBox();
+            this.checkConducir = new System.Windows.Forms.CheckBox();
+            this.checkCarretilla = new System.Windows.Forms.CheckBox();
+            this.checkCamion = new System.Windows.Forms.CheckBox();
+            this.comboAlmacenEstudios = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboTipo = new System.Windows.Forms.ComboBox();
+            this.tablaCandidatos = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupAdmin.SuspendLayout();
             this.groupInternet.SuspendLayout();
             this.groupCalculo.SuspendLayout();
-            this.GroupTextos.SuspendLayout();
+            this.groupTextos.SuspendLayout();
             this.groupAlmacen.SuspendLayout();
-            this.groupCarnets.SuspendLayout();
             this.groupFiltroAlmacen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupCarnets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCandidatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -88,9 +90,10 @@
             this.groupAdmin.Controls.Add(this.btnAdmin);
             this.groupAdmin.Controls.Add(this.groupInternet);
             this.groupAdmin.Controls.Add(this.groupCalculo);
-            this.groupAdmin.Controls.Add(this.GroupTextos);
+            this.groupAdmin.Controls.Add(this.groupTextos);
             this.groupAdmin.Controls.Add(this.comboAdminEstudios);
             this.groupAdmin.Controls.Add(this.label2);
+            this.groupAdmin.Enabled = false;
             this.groupAdmin.Location = new System.Drawing.Point(51, 79);
             this.groupAdmin.Name = "groupAdmin";
             this.groupAdmin.Size = new System.Drawing.Size(452, 266);
@@ -106,6 +109,7 @@
             this.btnAdmin.TabIndex = 5;
             this.btnAdmin.Text = "Mostrar listado";
             this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // groupInternet
             // 
@@ -223,19 +227,19 @@
             this.radioCalculoTodos.Text = "Todos";
             this.radioCalculoTodos.UseVisualStyleBackColor = true;
             // 
-            // GroupTextos
+            // groupTextos
             // 
-            this.GroupTextos.Controls.Add(this.radioTextosAvanzado);
-            this.GroupTextos.Controls.Add(this.radioTextosMedio);
-            this.GroupTextos.Controls.Add(this.radioTextosUsuario);
-            this.GroupTextos.Controls.Add(this.radioTextosTodos);
-            this.GroupTextos.ForeColor = System.Drawing.Color.Firebrick;
-            this.GroupTextos.Location = new System.Drawing.Point(30, 64);
-            this.GroupTextos.Name = "GroupTextos";
-            this.GroupTextos.Size = new System.Drawing.Size(384, 44);
-            this.GroupTextos.TabIndex = 2;
-            this.GroupTextos.TabStop = false;
-            this.GroupTextos.Text = "Tratamiento de textos";
+            this.groupTextos.Controls.Add(this.radioTextosAvanzado);
+            this.groupTextos.Controls.Add(this.radioTextosMedio);
+            this.groupTextos.Controls.Add(this.radioTextosUsuario);
+            this.groupTextos.Controls.Add(this.radioTextosTodos);
+            this.groupTextos.ForeColor = System.Drawing.Color.Firebrick;
+            this.groupTextos.Location = new System.Drawing.Point(30, 64);
+            this.groupTextos.Name = "groupTextos";
+            this.groupTextos.Size = new System.Drawing.Size(384, 44);
+            this.groupTextos.TabIndex = 2;
+            this.groupTextos.TabStop = false;
+            this.groupTextos.Text = "Tratamiento de textos";
             // 
             // radioTextosAvanzado
             // 
@@ -283,7 +287,15 @@
             // 
             // comboAdminEstudios
             // 
+            this.comboAdminEstudios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboAdminEstudios.FormattingEnabled = true;
+            this.comboAdminEstudios.Items.AddRange(new object[] {
+            "Seleccione",
+            "ESO",
+            "Grado Medio",
+            "Bachillerato",
+            "Grado Superior",
+            "Universitarios"});
             this.comboAdminEstudios.Location = new System.Drawing.Point(156, 28);
             this.comboAdminEstudios.Name = "comboAdminEstudios";
             this.comboAdminEstudios.Size = new System.Drawing.Size(210, 21);
@@ -305,6 +317,7 @@
             this.groupAlmacen.Controls.Add(this.groupCarnets);
             this.groupAlmacen.Controls.Add(this.comboAlmacenEstudios);
             this.groupAlmacen.Controls.Add(this.label3);
+            this.groupAlmacen.Enabled = false;
             this.groupAlmacen.Location = new System.Drawing.Point(577, 79);
             this.groupAlmacen.Name = "groupAlmacen";
             this.groupAlmacen.Size = new System.Drawing.Size(452, 266);
@@ -312,13 +325,108 @@
             this.groupAlmacen.TabStop = false;
             this.groupAlmacen.Text = "Filtros almacén";
             // 
-            // comboTipo
+            // btnAlmacen
             // 
-            this.comboTipo.FormattingEnabled = true;
-            this.comboTipo.Location = new System.Drawing.Point(165, 36);
-            this.comboTipo.Name = "comboTipo";
-            this.comboTipo.Size = new System.Drawing.Size(162, 21);
-            this.comboTipo.TabIndex = 3;
+            this.btnAlmacen.Location = new System.Drawing.Point(165, 225);
+            this.btnAlmacen.Name = "btnAlmacen";
+            this.btnAlmacen.Size = new System.Drawing.Size(120, 23);
+            this.btnAlmacen.TabIndex = 6;
+            this.btnAlmacen.Text = "Mostrar listado";
+            this.btnAlmacen.UseVisualStyleBackColor = true;
+            this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
+            // 
+            // groupFiltroAlmacen
+            // 
+            this.groupFiltroAlmacen.Controls.Add(this.radioAlmacenFiltrar);
+            this.groupFiltroAlmacen.Controls.Add(this.radioAlmacenTodos);
+            this.groupFiltroAlmacen.Location = new System.Drawing.Point(36, 73);
+            this.groupFiltroAlmacen.Name = "groupFiltroAlmacen";
+            this.groupFiltroAlmacen.Size = new System.Drawing.Size(252, 42);
+            this.groupFiltroAlmacen.TabIndex = 4;
+            // 
+            // radioAlmacenFiltrar
+            // 
+            this.radioAlmacenFiltrar.AutoSize = true;
+            this.radioAlmacenFiltrar.Location = new System.Drawing.Point(123, 14);
+            this.radioAlmacenFiltrar.Name = "radioAlmacenFiltrar";
+            this.radioAlmacenFiltrar.Size = new System.Drawing.Size(50, 17);
+            this.radioAlmacenFiltrar.TabIndex = 0;
+            this.radioAlmacenFiltrar.TabStop = true;
+            this.radioAlmacenFiltrar.Text = "Filtrar";
+            this.radioAlmacenFiltrar.UseVisualStyleBackColor = true;
+            this.radioAlmacenFiltrar.CheckedChanged += new System.EventHandler(this.radioAlmacenFiltrar_CheckedChanged);
+            // 
+            // radioAlmacenTodos
+            // 
+            this.radioAlmacenTodos.AutoSize = true;
+            this.radioAlmacenTodos.Location = new System.Drawing.Point(13, 14);
+            this.radioAlmacenTodos.Name = "radioAlmacenTodos";
+            this.radioAlmacenTodos.Size = new System.Drawing.Size(55, 17);
+            this.radioAlmacenTodos.TabIndex = 0;
+            this.radioAlmacenTodos.TabStop = true;
+            this.radioAlmacenTodos.Text = "Todos";
+            this.radioAlmacenTodos.UseVisualStyleBackColor = true;
+            this.radioAlmacenTodos.CheckedChanged += new System.EventHandler(this.radioAlmacenTodos_CheckedChanged);
+            // 
+            // groupCarnets
+            // 
+            this.groupCarnets.Controls.Add(this.checkConducir);
+            this.groupCarnets.Controls.Add(this.checkCarretilla);
+            this.groupCarnets.Controls.Add(this.checkCamion);
+            this.groupCarnets.Enabled = false;
+            this.groupCarnets.ForeColor = System.Drawing.Color.Firebrick;
+            this.groupCarnets.Location = new System.Drawing.Point(36, 123);
+            this.groupCarnets.Name = "groupCarnets";
+            this.groupCarnets.Size = new System.Drawing.Size(365, 67);
+            this.groupCarnets.TabIndex = 3;
+            this.groupCarnets.TabStop = false;
+            this.groupCarnets.Text = "CARNETS";
+            // 
+            // checkConducir
+            // 
+            this.checkConducir.AutoSize = true;
+            this.checkConducir.Location = new System.Drawing.Point(13, 31);
+            this.checkConducir.Name = "checkConducir";
+            this.checkConducir.Size = new System.Drawing.Size(116, 17);
+            this.checkConducir.TabIndex = 0;
+            this.checkConducir.Text = "Carnet de conducir";
+            this.checkConducir.UseVisualStyleBackColor = true;
+            // 
+            // checkCarretilla
+            // 
+            this.checkCarretilla.AutoSize = true;
+            this.checkCarretilla.Location = new System.Drawing.Point(135, 31);
+            this.checkCarretilla.Name = "checkCarretilla";
+            this.checkCarretilla.Size = new System.Drawing.Size(114, 17);
+            this.checkCarretilla.TabIndex = 0;
+            this.checkCarretilla.Text = "Carnet de carretilla";
+            this.checkCarretilla.UseVisualStyleBackColor = true;
+            // 
+            // checkCamion
+            // 
+            this.checkCamion.AutoSize = true;
+            this.checkCamion.Location = new System.Drawing.Point(259, 31);
+            this.checkCamion.Name = "checkCamion";
+            this.checkCamion.Size = new System.Drawing.Size(110, 17);
+            this.checkCamion.TabIndex = 0;
+            this.checkCamion.Text = "Carnet de Camión";
+            this.checkCamion.UseVisualStyleBackColor = true;
+            // 
+            // comboAlmacenEstudios
+            // 
+            this.comboAlmacenEstudios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboAlmacenEstudios.FormattingEnabled = true;
+            this.comboAlmacenEstudios.Items.AddRange(new object[] {
+            "Seleccione",
+            "ESO",
+            "Grado Medio",
+            "Bachillerato",
+            "Grado Superior",
+            "Universitarios"});
+            this.comboAlmacenEstudios.Location = new System.Drawing.Point(165, 28);
+            this.comboAlmacenEstudios.Name = "comboAlmacenEstudios";
+            this.comboAlmacenEstudios.Size = new System.Drawing.Size(210, 21);
+            this.comboAlmacenEstudios.TabIndex = 2;
             // 
             // label3
             // 
@@ -329,108 +437,32 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Estudios finalizados";
             // 
-            // comboAlmacenEstudios
+            // comboTipo
             // 
-            this.comboAlmacenEstudios.FormattingEnabled = true;
-            this.comboAlmacenEstudios.Location = new System.Drawing.Point(165, 28);
-            this.comboAlmacenEstudios.Name = "comboAlmacenEstudios";
-            this.comboAlmacenEstudios.Size = new System.Drawing.Size(210, 21);
-            this.comboAlmacenEstudios.TabIndex = 2;
+            this.comboTipo.FormattingEnabled = true;
+            this.comboTipo.Items.AddRange(new object[] {
+            "Seleccione",
+            "Administración",
+            "Almacén"});
+            this.comboTipo.Location = new System.Drawing.Point(165, 36);
+            this.comboTipo.Name = "comboTipo";
+            this.comboTipo.Size = new System.Drawing.Size(162, 21);
+            this.comboTipo.TabIndex = 3;
+            this.comboTipo.SelectedIndexChanged += new System.EventHandler(this.comboTipo_SelectedIndexChanged);
             // 
-            // groupCarnets
+            // tablaCandidatos
             // 
-            this.groupCarnets.Controls.Add(this.checkBox3);
-            this.groupCarnets.Controls.Add(this.checkBox2);
-            this.groupCarnets.Controls.Add(this.checkBox1);
-            this.groupCarnets.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupCarnets.Location = new System.Drawing.Point(36, 123);
-            this.groupCarnets.Name = "groupCarnets";
-            this.groupCarnets.Size = new System.Drawing.Size(365, 67);
-            this.groupCarnets.TabIndex = 3;
-            this.groupCarnets.TabStop = false;
-            this.groupCarnets.Text = "CARNETS";
-            // 
-            // groupFiltroAlmacen
-            // 
-            this.groupFiltroAlmacen.Controls.Add(this.radioButton14);
-            this.groupFiltroAlmacen.Controls.Add(this.radioButton13);
-            this.groupFiltroAlmacen.Location = new System.Drawing.Point(36, 73);
-            this.groupFiltroAlmacen.Name = "groupFiltroAlmacen";
-            this.groupFiltroAlmacen.Size = new System.Drawing.Size(252, 42);
-            this.groupFiltroAlmacen.TabIndex = 4;
-            // 
-            // radioButton13
-            // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.Location = new System.Drawing.Point(13, 14);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(55, 17);
-            this.radioButton13.TabIndex = 0;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "Todos";
-            this.radioButton13.UseVisualStyleBackColor = true;
-            // 
-            // radioButton14
-            // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.Location = new System.Drawing.Point(123, 14);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(50, 17);
-            this.radioButton14.TabIndex = 0;
-            this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "Filtrar";
-            this.radioButton14.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 31);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(116, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Carnet de conducir";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(135, 31);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(114, 17);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "Carnet de carretilla";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(259, 31);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(110, 17);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "Carnet de Camión";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // btnAlmacen
-            // 
-            this.btnAlmacen.Location = new System.Drawing.Point(165, 225);
-            this.btnAlmacen.Name = "btnAlmacen";
-            this.btnAlmacen.Size = new System.Drawing.Size(120, 23);
-            this.btnAlmacen.TabIndex = 6;
-            this.btnAlmacen.Text = "Mostrar listado";
-            this.btnAlmacen.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.tablaCandidatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaCandidatos.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaCandidatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
@@ -438,19 +470,32 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(51, 398);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(978, 228);
-            this.dataGridView1.TabIndex = 4;
+            this.tablaCandidatos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaCandidatos.GridColor = System.Drawing.Color.White;
+            this.tablaCandidatos.Location = new System.Drawing.Point(51, 398);
+            this.tablaCandidatos.Name = "tablaCandidatos";
+            this.tablaCandidatos.RowHeadersVisible = false;
+            this.tablaCandidatos.Size = new System.Drawing.Size(978, 228);
+            this.tablaCandidatos.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MnayaRRHH.Properties.Resources.excelIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(984, 352);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Listados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 661);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.tablaCandidatos);
             this.Controls.Add(this.comboTipo);
             this.Controls.Add(this.groupAlmacen);
             this.Controls.Add(this.groupAdmin);
@@ -468,15 +513,16 @@
             this.groupInternet.PerformLayout();
             this.groupCalculo.ResumeLayout(false);
             this.groupCalculo.PerformLayout();
-            this.GroupTextos.ResumeLayout(false);
-            this.GroupTextos.PerformLayout();
+            this.groupTextos.ResumeLayout(false);
+            this.groupTextos.PerformLayout();
             this.groupAlmacen.ResumeLayout(false);
             this.groupAlmacen.PerformLayout();
-            this.groupCarnets.ResumeLayout(false);
-            this.groupCarnets.PerformLayout();
             this.groupFiltroAlmacen.ResumeLayout(false);
             this.groupFiltroAlmacen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupCarnets.ResumeLayout(false);
+            this.groupCarnets.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCandidatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,7 +547,7 @@
         private System.Windows.Forms.RadioButton radioCalculoMedio;
         private System.Windows.Forms.RadioButton radioCalculoUsuario;
         private System.Windows.Forms.RadioButton radioCalculoTodos;
-        private System.Windows.Forms.GroupBox GroupTextos;
+        private System.Windows.Forms.GroupBox groupTextos;
         private System.Windows.Forms.RadioButton radioTextosAvanzado;
         private System.Windows.Forms.RadioButton radioTextosMedio;
         private System.Windows.Forms.RadioButton radioTextosUsuario;
@@ -510,12 +556,13 @@
         private System.Windows.Forms.GroupBox groupCarnets;
         private System.Windows.Forms.ComboBox comboAlmacenEstudios;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton radioButton14;
-        private System.Windows.Forms.RadioButton radioButton13;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.RadioButton radioAlmacenFiltrar;
+        private System.Windows.Forms.RadioButton radioAlmacenTodos;
+        private System.Windows.Forms.CheckBox checkCamion;
+        private System.Windows.Forms.CheckBox checkCarretilla;
+        private System.Windows.Forms.CheckBox checkConducir;
         private System.Windows.Forms.Button btnAlmacen;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tablaCandidatos;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
