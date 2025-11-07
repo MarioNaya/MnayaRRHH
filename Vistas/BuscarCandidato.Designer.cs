@@ -34,29 +34,29 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupDatosPersonales = new System.Windows.Forms.GroupBox();
+            this.campoNombre = new System.Windows.Forms.TextBox();
+            this.campoApellidos = new System.Windows.Forms.TextBox();
+            this.campoFechaNacimiento = new System.Windows.Forms.TextBox();
+            this.campoDireccion = new System.Windows.Forms.TextBox();
+            this.campoCp = new System.Windows.Forms.TextBox();
+            this.campoLocalidad = new System.Windows.Forms.TextBox();
+            this.campoTelefono = new System.Windows.Forms.TextBox();
+            this.campoEmail = new System.Windows.Forms.TextBox();
+            this.campoFechaAlta = new System.Windows.Forms.TextBox();
+            this.pictureFoto = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.comboTipo = new System.Windows.Forms.ComboBox();
             this.campoDni = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.pictureFoto = new System.Windows.Forms.PictureBox();
-            this.campoFechaAlta = new System.Windows.Forms.TextBox();
-            this.campoEmail = new System.Windows.Forms.TextBox();
-            this.campoTelefono = new System.Windows.Forms.TextBox();
-            this.campoLocalidad = new System.Windows.Forms.TextBox();
-            this.campoCp = new System.Windows.Forms.TextBox();
-            this.campoDireccion = new System.Windows.Forms.TextBox();
-            this.campoFechaNacimiento = new System.Windows.Forms.TextBox();
-            this.campoApellidos = new System.Windows.Forms.TextBox();
-            this.campoNombre = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEnviarEmail = new System.Windows.Forms.Button();
             this.btnPdf = new System.Windows.Forms.Button();
@@ -133,6 +133,178 @@
             this.groupDatosPersonales.TabStop = false;
             this.groupDatosPersonales.Text = "DATOS PERSONALES";
             // 
+            // campoNombre
+            // 
+            this.campoNombre.Enabled = false;
+            this.campoNombre.Location = new System.Drawing.Point(258, 37);
+            this.campoNombre.Name = "campoNombre";
+            this.campoNombre.Size = new System.Drawing.Size(143, 20);
+            this.campoNombre.TabIndex = 19;
+            this.campoNombre.TextChanged += new System.EventHandler(this.campoNombre_TextChanged);
+            // 
+            // campoApellidos
+            // 
+            this.campoApellidos.Enabled = false;
+            this.campoApellidos.Location = new System.Drawing.Point(258, 67);
+            this.campoApellidos.Name = "campoApellidos";
+            this.campoApellidos.Size = new System.Drawing.Size(237, 20);
+            this.campoApellidos.TabIndex = 18;
+            // 
+            // campoFechaNacimiento
+            // 
+            this.campoFechaNacimiento.Enabled = false;
+            this.campoFechaNacimiento.Location = new System.Drawing.Point(258, 101);
+            this.campoFechaNacimiento.Name = "campoFechaNacimiento";
+            this.campoFechaNacimiento.Size = new System.Drawing.Size(143, 20);
+            this.campoFechaNacimiento.TabIndex = 17;
+            // 
+            // campoDireccion
+            // 
+            this.campoDireccion.Enabled = false;
+            this.campoDireccion.Location = new System.Drawing.Point(258, 134);
+            this.campoDireccion.Name = "campoDireccion";
+            this.campoDireccion.Size = new System.Drawing.Size(237, 20);
+            this.campoDireccion.TabIndex = 16;
+            // 
+            // campoCp
+            // 
+            this.campoCp.Enabled = false;
+            this.campoCp.Location = new System.Drawing.Point(258, 167);
+            this.campoCp.Name = "campoCp";
+            this.campoCp.Size = new System.Drawing.Size(88, 20);
+            this.campoCp.TabIndex = 15;
+            // 
+            // campoLocalidad
+            // 
+            this.campoLocalidad.Enabled = false;
+            this.campoLocalidad.Location = new System.Drawing.Point(258, 201);
+            this.campoLocalidad.Name = "campoLocalidad";
+            this.campoLocalidad.Size = new System.Drawing.Size(143, 20);
+            this.campoLocalidad.TabIndex = 14;
+            // 
+            // campoTelefono
+            // 
+            this.campoTelefono.Enabled = false;
+            this.campoTelefono.Location = new System.Drawing.Point(258, 234);
+            this.campoTelefono.Name = "campoTelefono";
+            this.campoTelefono.Size = new System.Drawing.Size(143, 20);
+            this.campoTelefono.TabIndex = 13;
+            // 
+            // campoEmail
+            // 
+            this.campoEmail.Enabled = false;
+            this.campoEmail.Location = new System.Drawing.Point(258, 266);
+            this.campoEmail.Name = "campoEmail";
+            this.campoEmail.Size = new System.Drawing.Size(237, 20);
+            this.campoEmail.TabIndex = 12;
+            // 
+            // campoFechaAlta
+            // 
+            this.campoFechaAlta.Enabled = false;
+            this.campoFechaAlta.Location = new System.Drawing.Point(258, 303);
+            this.campoFechaAlta.Name = "campoFechaAlta";
+            this.campoFechaAlta.Size = new System.Drawing.Size(143, 20);
+            this.campoFechaAlta.TabIndex = 11;
+            // 
+            // pictureFoto
+            // 
+            this.pictureFoto.Location = new System.Drawing.Point(610, 76);
+            this.pictureFoto.Name = "pictureFoto";
+            this.pictureFoto.Size = new System.Drawing.Size(163, 178);
+            this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureFoto.TabIndex = 10;
+            this.pictureFoto.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(607, 42);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(28, 13);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Foto";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(118, 40);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 13);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Nombre";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(118, 70);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Apellidos";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(118, 104);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 13);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Fecha de nacimiento";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(118, 137);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Dirección";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(118, 170);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(21, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "CP";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(118, 204);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Localidad";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(118, 237);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Teléfono";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(118, 269);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Email";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(118, 303);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Fecha de alta";
+            // 
             // comboTipo
             // 
             this.comboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -167,178 +339,6 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(118, 303);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Fecha de alta";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(118, 269);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Email";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(118, 237);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Teléfono";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(118, 204);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Localidad";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(118, 170);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(21, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "CP";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(118, 137);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 13);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Dirección";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(118, 104);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 13);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Fecha de nacimiento";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(118, 70);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 13);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Apellidos";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(118, 40);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 13);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Nombre";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(607, 42);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(28, 13);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Foto";
-            // 
-            // pictureFoto
-            // 
-            this.pictureFoto.Location = new System.Drawing.Point(610, 76);
-            this.pictureFoto.Name = "pictureFoto";
-            this.pictureFoto.Size = new System.Drawing.Size(163, 178);
-            this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureFoto.TabIndex = 10;
-            this.pictureFoto.TabStop = false;
-            // 
-            // campoFechaAlta
-            // 
-            this.campoFechaAlta.Enabled = false;
-            this.campoFechaAlta.Location = new System.Drawing.Point(258, 303);
-            this.campoFechaAlta.Name = "campoFechaAlta";
-            this.campoFechaAlta.Size = new System.Drawing.Size(143, 20);
-            this.campoFechaAlta.TabIndex = 11;
-            // 
-            // campoEmail
-            // 
-            this.campoEmail.Enabled = false;
-            this.campoEmail.Location = new System.Drawing.Point(258, 266);
-            this.campoEmail.Name = "campoEmail";
-            this.campoEmail.Size = new System.Drawing.Size(237, 20);
-            this.campoEmail.TabIndex = 12;
-            // 
-            // campoTelefono
-            // 
-            this.campoTelefono.Enabled = false;
-            this.campoTelefono.Location = new System.Drawing.Point(258, 234);
-            this.campoTelefono.Name = "campoTelefono";
-            this.campoTelefono.Size = new System.Drawing.Size(143, 20);
-            this.campoTelefono.TabIndex = 13;
-            // 
-            // campoLocalidad
-            // 
-            this.campoLocalidad.Enabled = false;
-            this.campoLocalidad.Location = new System.Drawing.Point(258, 201);
-            this.campoLocalidad.Name = "campoLocalidad";
-            this.campoLocalidad.Size = new System.Drawing.Size(143, 20);
-            this.campoLocalidad.TabIndex = 14;
-            // 
-            // campoCp
-            // 
-            this.campoCp.Enabled = false;
-            this.campoCp.Location = new System.Drawing.Point(258, 167);
-            this.campoCp.Name = "campoCp";
-            this.campoCp.Size = new System.Drawing.Size(88, 20);
-            this.campoCp.TabIndex = 15;
-            // 
-            // campoDireccion
-            // 
-            this.campoDireccion.Enabled = false;
-            this.campoDireccion.Location = new System.Drawing.Point(258, 134);
-            this.campoDireccion.Name = "campoDireccion";
-            this.campoDireccion.Size = new System.Drawing.Size(237, 20);
-            this.campoDireccion.TabIndex = 16;
-            // 
-            // campoFechaNacimiento
-            // 
-            this.campoFechaNacimiento.Enabled = false;
-            this.campoFechaNacimiento.Location = new System.Drawing.Point(258, 101);
-            this.campoFechaNacimiento.Name = "campoFechaNacimiento";
-            this.campoFechaNacimiento.Size = new System.Drawing.Size(143, 20);
-            this.campoFechaNacimiento.TabIndex = 17;
-            // 
-            // campoApellidos
-            // 
-            this.campoApellidos.Enabled = false;
-            this.campoApellidos.Location = new System.Drawing.Point(258, 67);
-            this.campoApellidos.Name = "campoApellidos";
-            this.campoApellidos.Size = new System.Drawing.Size(237, 20);
-            this.campoApellidos.TabIndex = 18;
-            // 
-            // campoNombre
-            // 
-            this.campoNombre.Enabled = false;
-            this.campoNombre.Location = new System.Drawing.Point(258, 37);
-            this.campoNombre.Name = "campoNombre";
-            this.campoNombre.Size = new System.Drawing.Size(143, 20);
-            this.campoNombre.TabIndex = 19;
-            this.campoNombre.TextChanged += new System.EventHandler(this.campoNombre_TextChanged);
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Enabled = false;
@@ -359,6 +359,7 @@
             this.btnEnviarEmail.TabIndex = 8;
             this.btnEnviarEmail.Text = "Enviar email";
             this.btnEnviarEmail.UseVisualStyleBackColor = true;
+            this.btnEnviarEmail.Click += new System.EventHandler(this.btnEnviarEmail_Click);
             // 
             // btnPdf
             // 

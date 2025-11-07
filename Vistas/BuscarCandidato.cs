@@ -69,7 +69,13 @@ namespace MnayaRRHH.Vistas
             }
         }
 
+        private void btnEnviarEmail_Click(object sender, EventArgs e)
+        {
+            DatosMensaje dm = new DatosMensaje();
+            dm.ShowDialog();
+        }
 
+        public static string email;
         string dniCandidato, tabla;
 
         public void MostrarCandidato()
@@ -93,6 +99,7 @@ namespace MnayaRRHH.Vistas
                     tabla = "candidatoadministracion";
                     c = Consultas.RescatarDatosCandidato(dniCandidato, tabla);
                     RellenarFormulario(c);
+                    email = campoEmail.Text;
                 }
                 else
                 {
@@ -100,6 +107,7 @@ namespace MnayaRRHH.Vistas
                                   "Búsqueda de candidato",
                                   MessageBoxButtons.OK,
                                   MessageBoxIcon.Warning);
+                    campoDni.Text = string.Empty;
                 }
             }
             else if (comboTipo.SelectedIndex == 2)
@@ -110,6 +118,7 @@ namespace MnayaRRHH.Vistas
                     tabla = "candidatoalmacen";
                     c = Consultas.RescatarDatosCandidato(dniCandidato, tabla);
                     RellenarFormulario(c);
+                    email = campoEmail.Text;
                 }
                 else
                 {
@@ -117,6 +126,7 @@ namespace MnayaRRHH.Vistas
                                   "Búsqueda de candidato",
                                   MessageBoxButtons.OK,
                                   MessageBoxIcon.Information);
+                    campoDni.Text = string.Empty;
                 }
             }
             else
@@ -142,11 +152,12 @@ namespace MnayaRRHH.Vistas
 
             if (c.Foto != null && c.Foto.Length > 0)
             {
-                MemoryStream ms = new MemoryStream(c.Foto);
-                pictureFoto.Image = System.Drawing.Image.FromStream(ms);
+                using (MemoryStream ms = new MemoryStream(c.Foto))
+                {
+                    pictureFoto.Image = System.Drawing.Image.FromStream(ms);
+                }
             }
         }
-
         public void ConfirmarEliminacionCandidato()
         {
 
