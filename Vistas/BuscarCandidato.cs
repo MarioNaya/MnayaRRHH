@@ -154,7 +154,18 @@ namespace MnayaRRHH.Vistas
             {
                 using (MemoryStream ms = new MemoryStream(c.Foto))
                 {
-                    pictureFoto.Image = System.Drawing.Image.FromStream(ms);
+                    try
+                    {
+                        pictureFoto.Image = System.Drawing.Image.FromStream(ms);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Imposible cargar la imagen",
+                        "Bñusqueda candidato",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                    
                 }
             }
         }
