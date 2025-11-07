@@ -142,13 +142,13 @@ namespace MnayaRRHH.Vistas
         {
             campoNombre.Text = c.Nombre;
             campoApellidos.Text = c.Apellidos;
-            campoFechaNacimiento.Text = c.FechaNaciemiento.ToString();
+            campoFechaNacimiento.Text = c.FechaNaciemiento.ToShortDateString();
             campoDireccion.Text = c.Direccion;
             campoCp.Text = c.Cp.ToString();
             campoLocalidad.Text = c.Localidad;
             campoTelefono.Text = c.Tlfno.ToString();
             campoEmail.Text = c.Email;
-            campoFechaAlta.Text = c.FechaAlta.ToString();
+            campoFechaAlta.Text = c.FechaAlta.ToShortDateString();
 
             if (c.Foto != null && c.Foto.Length > 0)
             {

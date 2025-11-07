@@ -99,7 +99,6 @@
             // 
             // fechaCita
             // 
-            this.fechaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechaCita.Location = new System.Drawing.Point(183, 127);
             this.fechaCita.Name = "fechaCita";
             this.fechaCita.Size = new System.Drawing.Size(200, 20);
@@ -119,7 +118,7 @@
             "14:00"});
             this.comboHora.Location = new System.Drawing.Point(183, 167);
             this.comboHora.Name = "comboHora";
-            this.comboHora.Size = new System.Drawing.Size(72, 21);
+            this.comboHora.Size = new System.Drawing.Size(102, 21);
             this.comboHora.TabIndex = 6;
             this.comboHora.SelectedIndexChanged += new System.EventHandler(this.comboHora_SelectedIndexChanged);
             // 
@@ -127,7 +126,7 @@
             // 
             this.labelAviso.AutoSize = true;
             this.labelAviso.ForeColor = System.Drawing.Color.Red;
-            this.labelAviso.Location = new System.Drawing.Point(276, 170);
+            this.labelAviso.Location = new System.Drawing.Point(308, 170);
             this.labelAviso.Name = "labelAviso";
             this.labelAviso.Size = new System.Drawing.Size(135, 13);
             this.labelAviso.TabIndex = 7;

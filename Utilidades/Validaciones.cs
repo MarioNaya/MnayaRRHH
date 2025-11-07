@@ -67,6 +67,11 @@ namespace MnayaRRHH.Utilidades
             return true;
         }
 
+        /// <summary>
+        /// Valida formato de DNI con operación para comprobar que la letra es correcta respecto a la numeración
+        /// </summary>
+        /// <param name="dni">string del DNI</param>
+        /// <returns>true si el formato es correcto y false si es incorrecto</returns>
         public static bool DniValido(string dni)
         {
 
@@ -96,6 +101,11 @@ namespace MnayaRRHH.Utilidades
             }
         }
 
+        /// <summary>
+        /// Comprobación de que la foto de perfil subida por el usuario no supere los 2mb
+        /// </summary>
+        /// <param name="ruta">path del archivo cargado</param>
+        /// <returns>true si el peso es inferior a 2mb y false si es superior</returns>
         public static bool PesoFotoValido(string ruta)
         {
             const int maxPesoBytes = 2 * 1024 * 1024; // 2 MB
@@ -108,6 +118,11 @@ namespace MnayaRRHH.Utilidades
             return true;
         }
 
+        /// <summary>
+        /// Asigna y recupera el valor de los checks dentro de un groupbox
+        /// </summary>
+        /// <param name="grp">groupbox contenedor de los checks</param>
+        /// <returns>SI=> si el check está marcado // NO => si el check no está marcado</returns>
         public static string[] RecuperarValoresCheck(GroupBox grp)
         {
             string[] valores = new string[grp.Controls.Count];
@@ -120,6 +135,11 @@ namespace MnayaRRHH.Utilidades
             return valores;
         }
 
+        /// <summary>
+        /// Recupera valores de los radios dentro de un groupbox en función de la propieda .Tag asignada a cada radio
+        /// </summary>
+        /// <param name="grp">groupbox contenedor de los radios</param>
+        /// <returns>string del tag del radio seleccionado</returns>
         public static string RecuperarValoresRadio(GroupBox grp)
         {
             foreach (Control c in grp.Controls)
@@ -133,6 +153,11 @@ namespace MnayaRRHH.Utilidades
             return string.Empty;
         }
 
+        /// <summary>
+        /// Recupera el valor del item seleccionado de un combo y lo devuelve como string. Discrimina el índice 0 como item no válido.
+        /// </summary>
+        /// <param name="combo">Combo del que se va a rescatar el valor</param>
+        /// <returns>string del valor del item seleccionado</returns>
         public static string RecuperarValorCombo(ComboBox combo)
         {
             if (combo.SelectedIndex != 0)
@@ -143,6 +168,10 @@ namespace MnayaRRHH.Utilidades
             return "";
         }
 
+        /// <summary>
+        /// Devuelve todos los controles dentro de un groupbox a su estado original. Contempla textbox, combobox, radios y checks.
+        /// </summary>
+        /// <param name="grp">groupbox contenedor de los controles que va a recorrer</param>
         public static void ResetearFormulario(GroupBox grp)
         {
             foreach (Control c in grp.Controls)
@@ -169,6 +198,11 @@ namespace MnayaRRHH.Utilidades
             }
         }
 
+        /// <summary>
+        /// comprueba que al menos un radio dentro de un groupbox ha sido seleccionado.
+        /// </summary>
+        /// <param name="grp">groupbox contenedor de los radios</param>
+        /// <returns></returns>
         public static bool ValidarRadioSeleccionado(GroupBox grp)
         {
             bool algunoSeleccionado = false;
@@ -188,6 +222,10 @@ namespace MnayaRRHH.Utilidades
             return false;
         }
 
+        /// <summary>
+        /// Asigna backcolor blanco a los textbox dentro de un groupbox cuando tienen el foco
+        /// </summary>
+        /// <param name="grp">groupbox contenedor</param>
         public static void Foco (GroupBox grp)
         {
             foreach (Control c in grp.Controls)
@@ -202,6 +240,10 @@ namespace MnayaRRHH.Utilidades
             }
         }
 
+        /// <summary>
+        /// Impide que en textbox para finalidad de contener int se pueda teclear nada que no sean números enteros.
+        /// </summary>
+        /// <param name="grp">groupbox contenedor</param>
         public static void AsignarSoloNumeros(GroupBox grp)
         {
             foreach (Control c in grp.Controls)

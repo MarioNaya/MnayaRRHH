@@ -520,8 +520,8 @@ namespace MnayaRRHH.bbdd
                                 dr["localidad"].ToString(),
                                 Convert.ToInt32(dr["cp"]),
                                 Convert.ToInt32(dr["telefono"]),
-                                Convert.ToDateTime(dr["fechaAlta"]),
-                                Convert.ToDateTime(dr["fechaNacimiento"])
+                                Convert.ToDateTime(dr["fechaAlta"]).Date,
+                                Convert.ToDateTime(dr["fechaNacimiento"]).Date
                                 );
                             return c;
                         }

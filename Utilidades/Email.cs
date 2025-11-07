@@ -9,6 +9,12 @@ namespace MnayaRRHH.Utilidades
 {
     internal class Email
     {
+        /// <summary>
+        /// Configuración y envío de correo electrónico desde el servidor y cuenta asignados.
+        /// </summary>
+        /// <param name="destino">dirección mail destino</param>
+        /// <param name="mensaje">mensaje enviado</param>
+        /// <returns>true si el correo se ha enviado correctamente</returns>
         public static bool EnvioCorreo(string destino, string mensaje)
         {
             
@@ -35,6 +41,12 @@ namespace MnayaRRHH.Utilidades
 
         }
 
+        /// <summary>
+        /// crea mensaje en html para envío por correo electónico
+        /// </summary>
+        /// <param name="fecha">fecha a incluir en el mensaje</param>
+        /// <param name="hora">hora a incluir en el mensaje</param>
+        /// <returns></returns>
         public static string CrearMensaje(string fecha, string hora)
         {
             string mensaje = $"<!DOCTYPE html>\r\n" +

@@ -22,8 +22,6 @@ namespace MnayaRRHH
             pictureUser.Visible = false;
             picturePass.Visible = false;
             this.ActiveControl = btnEntrar;
-            campoPass.Text = "admin";
-            campoUser.Text = "admin";
         }
 
         private void campoUser_Enter(object sender, EventArgs e)

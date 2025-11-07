@@ -27,10 +27,11 @@ namespace MnayaRRHH.Vistas
             }
             else
             {
-                string correo = Email.CrearMensaje(fechaCita.Value.ToString(),comboHora.SelectedItem.ToString());
+                string correo = Email.CrearMensaje(fechaCita.Value.ToShortDateString(),comboHora.SelectedItem.ToString());
                 if (Email.EnvioCorreo(BuscarCandidato.email, correo))
                 {
                     MessageBox.Show("Correo enviado correctamente","Envío de correo",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
                 }
                 else
                 {
